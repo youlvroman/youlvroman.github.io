@@ -98,7 +98,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">19</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">20</span></li></ul>
               </li>
             
           
@@ -187,70 +187,14 @@
       </div>
       <div class="article-entry">
         
-          <a id="more"></a>
-<h1 id="引用类型的理解"><a href="#引用类型的理解" class="headerlink" title="引用类型的理解"></a>引用类型的理解</h1><h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p>函数或者变量在程序中可以被使用的范围</p>
+          <h2 id="引用类型的理解"><a href="#引用类型的理解" class="headerlink" title="引用类型的理解"></a>引用类型的理解</h2><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>函数或者变量在程序中可以被使用的范围</p>
 <p><em>if语句的大括号不属于作用域</em></p>
-<p><em>for语句的大括号不属于作用域</em></p>
-<h1 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h1><p>1.Global</p>
-<p>所有全局变量和函数，都是Global的属性和方法。不依赖环境</p>
-<p>encodeURI(),不会对特殊字符编码(例如冒号，正斜杠，问号，#号)，使用utf-8编码。</p>
-<blockquote>
-<p><a href="http://www.baidu.com?name=encodeURI(&quot;李四" target="_blank" rel="external">http://www.baidu.com?name=encodeURI(&quot;李四</a>“)</p>
-</blockquote>
-<p>encondURIConponet(),全部编码</p>
-<blockquote>
-<p><a href="http://www.baidu.com?name=encodeURI(&quot;//李四&quot;)，斜杠也会被编码。" target="_blank" rel="external">http://www.baidu.com?name=encodeURI(&quot;//李四&quot;)，斜杠也会被编码。</a></p>
-</blockquote>
-<p>解码decodeURI(),decodeURIComponent()</p>
-<p>isNaN()判断是不是一个数字,不是数字返回true</p>
-<p>eval()解析字符串为js代码</p>
-<blockquote>
-<p>eval(“var num = 66”);alert(num);输出结果：66</p>
-</blockquote>
-<h1 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h1><p>1.max(),min()最大，最小值</p>
-<p>2.ceil(),返回大于等于它的最小整数(向上取整)</p>
-<p>3.floor()和ceil()相反</p>
-<p>4.round()四舍五入</p>
-<p>4.random()产生随机数(0-1)</p>
-<p>6.数学运算相关</p>
-<h1 id="面向对象和原型"><a href="#面向对象和原型" class="headerlink" title="面向对象和原型"></a>面向对象和原型</h1><p>ECMAScript有2种开发模式，函数式和面向对象。</p>
-<p>1.创建对象</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var stu = new Object();</div><div class="line">	stu.name = "战三";</div><div class="line">	stu.age = "16";</div><div class="line">	stu.study = function()&#123;</div><div class="line">		alert("我叫" + this.name);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(stu.study());</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>创建一个对象战三，他是一个学生，有名字，年龄，能学习。但是学校里有许多学生，我要创建其它学生，还要把以上代码重复写，为了解决以上问题，工厂模式应运而生</p>
-<p>2.工厂模式创建对象</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function createObj(name,age) &#123;</div><div class="line">		var obj = new Object();</div><div class="line">		obj.name = name;</div><div class="line">		obj.age = age;</div><div class="line">		obj.study = function() &#123;</div><div class="line">			alert("我叫" + this.name);</div><div class="line">		&#125;</div><div class="line">		return obj;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var zhansan = createObj("战三",21);</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>以上代码问题：typeof zhansan的类型是object，无法确定对象的具体类型，怎么办呢？使用构造函数来解决。</p>
-<p>3.构造方法创建对象</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;//后台创建new Object()</div><div class="line">		this.age = age;</div><div class="line">		this.study = function() &#123;</div><div class="line">			alert("我叫" + this.name);</div><div class="line">		&#125;</div><div class="line">		//后台返回了该对象</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var zhansan = Student("战三",21);</div><div class="line">	zhansan.study();</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>构造方法与工厂模式不同：</p>
-<p><em>1.构造方法没有显示的创建对象(new Object())</em></p>
-<p><em>2.直接将属性和方法赋值给this对象</em></p>
-<p><em>3.没有return语句</em></p>
-<h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><blockquote>
-<p>每个引用对象都有里都有prototype属性，</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var obj = &#123;</div><div class="line">		country: "中国"</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;</div><div class="line">		this.age = age;</div><div class="line">		this.study = function() &#123;</div><div class="line">			alert("我叫" + this.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Student.prototype = obj;//把Student的原型设置为obj</div><div class="line"></div><div class="line">	var zhansan = Student("战三",21);</div><div class="line">	var lisi = Student("李四",21);</div><div class="line"></div><div class="line">	alert(zhansan.country);</div><div class="line">	alert(lisi.country);</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>输出的结果都是中国，在两个对象里都有一个<strong>proto</strong>属性，指向obj对象。当使用.country属性的时候，会先在Student属性里找有没有country属性，如果没有，就去<strong>proto</strong>中去找，然后输出。实现了共享。</p>
-<blockquote>
-<p>那么原型对象有穷尽吗？就是说有么有没有原型。Object对象没有原型</p>
-</blockquote>
-<p>判断一个对象是否指向了构造函数的的原型对象</p>
-<blockquote>
-<p>alert(Student.prototype.isPrototypeOf(stu1));</p>
-</blockquote>
-<p>优先使用对象中的属性，而不是原型中的；对象中没有对应的属性才使用原型中</p>
-<p>stu.hasOwnProperty()判读自己本身是否有属性</p>
-<p>delete.stu1.name删除stu1的name属性</p>
-<p>alert(“name” in stu1);自身或者原型中有name属性都会返回true</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var obj = &#123;</div><div class="line">		country: "中国"</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;</div><div class="line">		this.age = age;</div><div class="line">		this.study = function() &#123;</div><div class="line">			alert("我叫" + this.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Student.prototype = obj;</div><div class="line"></div><div class="line">	var stu1 = Student("战三",21);</div><div class="line"></div><div class="line">	alert(stu1.construtor);</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>打印结果类似这样的：function Student(name,age) {}。把15行注释掉，再次运行，结果类似这样：function Object(){}。有两种解决方法</p>
-<p>1.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var obj = &#123;</div><div class="line">		construtor: Student,</div><div class="line">		country: "中国"</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;</div><div class="line">		this.age = age;</div><div class="line">		this.study = function() &#123;</div><div class="line">			alert("我叫" + this.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Student.prototype = obj;</div><div class="line"></div><div class="line">	var stu1 = Student("战三",21);</div><div class="line"></div><div class="line">	alert(stu1.construtor);</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>2.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;</div><div class="line">		this.age = age;</div><div class="line">		this.study = function() &#123;</div><div class="line">			alert("我叫" + this.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Student.prototype.country = "中国";</div><div class="line"></div><div class="line">	var stu1 = Student("战三",21);</div><div class="line"></div><div class="line">	alert(stu1.construtor);</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>推荐使用第一种。原型可以实现数据的共享。</p>
-<h1 id="构造函数-原型-模式"><a href="#构造函数-原型-模式" class="headerlink" title="构造函数+原型 模式"></a>构造函数+原型 模式</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;</div><div class="line">		this.age = age;</div><div class="line">		this.family = ["爸爸","妈妈"];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	//所以对象共享内容定义在原型对象中</div><div class="line">	Student.prototype = &#123;</div><div class="line">		fun:function() &#123;</div><div class="line">			return this.name + this.age;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h1 id="动态原型"><a href="#动态原型" class="headerlink" title="动态原型"></a>动态原型</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	function Student(name,age) &#123;</div><div class="line">		this.name = name;</div><div class="line">		this.age = age;</div><div class="line">		this.family = ["爸爸","妈妈"];</div><div class="line"></div><div class="line">		//防止第二次初始化</div><div class="line">		if (typeof this.fun != "function") &#123;</div><div class="line">			Student.prototype.fun = function()&#123;</div><div class="line">				return this.name + this.age;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><em>for语句的大括号不属于作用域</em><br>
+          <p>
+            <a href="/2017/05/03/js-oop/">
+              Read More
+            </a>
+          </p>
         
       </div>
     </div>
