@@ -8,21 +8,19 @@
 
 <title>
   
-    js函数
+    标签: bitmap
   
 </title>
 
-<meta name="description" content="简介js中的函数对应Function，和数组类似。每个函数都是一个Function类型的对象，函数是引用类型，既然是引用类型，就有属性和方法。 创建方法1.普通方式 12345&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	function fun(num1,num2) &amp;#123;		return num1 + num2;	&amp;#125;&amp;lt;/script&amp;gt;">
-<meta name="keywords" content="js-func">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js函数">
-<meta property="og:url" content="http://yoursite.com/2017/05/03/js-function/index.html">
+<meta name="description" content="程序开发，Android技术分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一只小猪">
+<meta property="og:url" content="http://yoursite.com/tags/bitmap/index.html">
 <meta property="og:site_name" content="一只小猪">
-<meta property="og:description" content="简介js中的函数对应Function，和数组类似。每个函数都是一个Function类型的对象，函数是引用类型，既然是引用类型，就有属性和方法。 创建方法1.普通方式 12345&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	function fun(num1,num2) &amp;#123;		return num1 + num2;	&amp;#125;&amp;lt;/script&amp;gt;">
-<meta property="og:updated_time" content="2017-05-03T03:49:11.818Z">
+<meta property="og:description" content="程序开发，Android技术分享">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js函数">
-<meta name="twitter:description" content="简介js中的函数对应Function，和数组类似。每个函数都是一个Function类型的对象，函数是引用类型，既然是引用类型，就有属性和方法。 创建方法1.普通方式 12345&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	function fun(num1,num2) &amp;#123;		return num1 + num2;	&amp;#125;&amp;lt;/script&amp;gt;">
+<meta name="twitter:title" content="一只小猪">
+<meta name="twitter:description" content="程序开发，Android技术分享">
 
 
   <link rel="alternative" href="/atom.xml" title="一只小猪" type="application/atom+xml">
@@ -152,80 +150,52 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-js-function" class="article article-type-post">
+          <h1>bitmap</h1>
+
+
   
-    <h1 class="article-header">
-      js函数
-    </h1>
   
+    <div class="post-list">
   
 
-  <div class="article-info">
-    <span class="article-date">
-  2017-05-03
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/05/08/about-bitmap/" >
+  bitmap占用内存大小
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/05/08/about-bitmap/"><span class="article-date">
+  2017-05-08
 </span>
-
-    
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web开发/">web开发</a></li></ul>
-	</span>
-
-
-    
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-func/">js-func</a></li></ul>
-	</span>
-
-
-  </div>
-  <div class="article-entry">
-    <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>js中的函数对应Function，和数组类似。每个函数都是一个Function类型的对象，函数是引用类型，既然是引用类型，就有属性和方法。</p>
-<h1 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h1><p>1.普通方式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function fun(num1,num2) &#123;</div><div class="line">		return num1 + num2;</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>2.变量方式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var fun = function() &#123;</div><div class="line">		return "hello";</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>3.new的方式(不建议使用，运行性能较以上两个低)</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var fun = new Function("n1","n2","return n1 + n2");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>函数可以作为参数传递给另一个函数</p>
-<h1 id="内部属性"><a href="#内部属性" class="headerlink" title="内部属性"></a>内部属性</h1><p>1.arguments属性，指向一个类似数组但不是数组的对象，存储的是实际传递给函数的参数，而不限于函数定义的参数列表。</p>
-<p>例子：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function show(a,b)&#123;</div><div class="line">		if (arguments.lenght == 2) &#123;</div><div class="line">			return a + b;</div><div class="line">		&#125; else if (arguments == 3) &#123;</div><div class="line">			return arguments[0] + arguments[1] + arguments[2];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	show("hello","world","roman");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>2.lenght属性，定义函数时参数个数</p>
-<p>3.arguments对象中的callee属性，表示函数对象本身的引用</p>
-<p>阶乘</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function jie(n)&#123;</div><div class="line">		if (n == 1) &#123;</div><div class="line">			return 1;</div><div class="line">		&#125; else &#123;</div><div class="line">			reutn n * arguments.call(n - 1);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	show("hello","world","roman");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>这样写及时函数名称改变也不会出错。</p>
-<h1 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h1><p><em>如果局部变量和全局变量同名，用局部变量</em></p>
-<h1 id="this的理解"><a href="#this的理解" class="headerlink" title="this的理解"></a>this的理解</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function show(name)&#123;</div><div class="line">		alert(name);</div><div class="line">	&#125;</div><div class="line">	var f = show;</div><div class="line">	f("lily");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>show是函数对象的引用，存储的是函数对象内存的地址。第5行的赋值就是简单的变量赋值。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var name = "li";</div><div class="line">	function show()&#123;</div><div class="line">		alert(name);</div><div class="line">	&#125;</div><div class="line">	show();//this指向window对象</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h1 id="函数内部方法"><a href="#函数内部方法" class="headerlink" title="函数内部方法"></a>函数内部方法</h1><p>Function内部有个prototype属性，该属性有两个方法，call()和apply()。作用：改变调用函数的对象</p>
-
-  </div>
-  <footer class="article-footer">
-    <!--
-  <div class="cc">
-    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
-      <img src="/images/cc/cc.png">
-      
-          <img src="/images/cc/by.png">
+</a>
         
-          <img src="/images/cc/sa.png">
-      
-      <span>
-        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
-      </span>
-    </a>
-  </div>
 
- -->
-    
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitmap/">bitmap</a></li></ul>
+	</span>
 
-  </footer>
-</article>
 
+      </div>
+      <div class="article-entry">
+        
+          <p>android中bitmap究竟占用多大内存，看了这篇文章后的总结<a href="http://bugly.qq.com/bbs/forum.php?mod=viewthread&amp;tid=498" target="_blank" rel="external">Android 开发绕不过的坑：你的 Bitmap 究竟占多大内存？</a><br>
+          <p>
+            <a href="/2017/05/08/about-bitmap/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
 
 
