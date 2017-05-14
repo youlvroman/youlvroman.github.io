@@ -8,19 +8,20 @@
 
 <title>
   
-    标签: js日期
+    Android性能分析
   
 </title>
 
-<meta name="description" content="程序开发，Android技术分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小猪">
-<meta property="og:url" content="http://yoursite.com/tags/js日期/index.html">
+<meta name="description" content="记录影响Android App性能的因素，如何分析出原因">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android性能分析">
+<meta property="og:url" content="http://yoursite.com/2017/05/14/android-performance-analysis/index.html">
 <meta property="og:site_name" content="一只小猪">
-<meta property="og:description" content="程序开发，Android技术分享">
+<meta property="og:description" content="记录影响Android App性能的因素，如何分析出原因">
+<meta property="og:updated_time" content="2017-05-14T08:46:06.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小猪">
-<meta name="twitter:description" content="程序开发，Android技术分享">
+<meta name="twitter:title" content="Android性能分析">
+<meta name="twitter:description" content="记录影响Android App性能的因素，如何分析出原因">
 
 
   <link rel="alternative" href="/atom.xml" title="一只小猪" type="application/atom+xml">
@@ -150,60 +151,64 @@
       
         <div style="max-width: 1000px">
       
-          <h1>js日期</h1>
-
-
+          <article id="post-android-performance-analysis" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android性能分析
+    </h1>
   
   
-    <div class="post-list">
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/03/js-time-date/" >
-  js时间日期
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/03/js-time-date/"><span class="article-date">
-  2017-05-03
+  <div class="article-info">
+    <span class="article-date">
+  2017-05-14
 </span>
-</a>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>记录影响Android App性能的因素，如何分析出原因<br><a id="more"></a></p>
+<h2 id="Android应用UI性能分析"><a href="#Android应用UI性能分析" class="headerlink" title="Android应用UI性能分析"></a>Android应用UI性能分析</h2><blockquote>
+<p>使用App时发现启动缓慢、动画不流畅、列表滑动也会卡顿，这时可以考虑UI性能。卡顿原因可能有： </p>
+<ul>
+<li>在UI线程做轻微的耗时操作，导致UI线程卡顿</li>
+<li>布局过于复杂,在16ms内没有渲染完</li>
+<li>同一时间内执行动画次数过多，导致cpu或gpu负载过重</li>
+<li>View过度绘制，某些像素同一帧时间重复绘制</li>
+<li>View频繁触发measure、layout方法，measure、layout累计耗时过多及View频繁的重新渲染</li>
+<li>内存频繁触发GC，阻塞渲染操作</li>
+<li>冗余资源导致加载慢</li>
+<li>ANR</li>
+</ul>
+</blockquote>
+<p>如何找到？通过Google提供的工具hierarchyview来分析</p>
+
+  </div>
+  <footer class="article-footer">
+    <!--
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
         
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web开发/">web开发</a></li></ul>
-	</span>
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
+ -->
+    
 
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js日期/">js日期</a></li></ul>
-	</span>
+  </footer>
+</article>
 
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="日期的创建"><a href="#日期的创建" class="headerlink" title="日期的创建"></a>日期的创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var date = new Date();//系统当前时间</div><div class="line"></div><div class="line">	var d1 = new Date(1000);//1970,1,1,8:00开始走过1s	</div><div class="line"></div><div class="line">	//内部使用Date.parse()得到毫秒数</div><div class="line">	var d2 = new Date("4/18/2008");//2008.04.18</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>因为内部使用Date.parse()，存在浏览器兼容问题。日期书写不正确不同浏览器的表现不一样注意。</p>
-<h1 id="时间和日期-其它的创建方法"><a href="#时间和日期-其它的创建方法" class="headerlink" title="时间和日期(其它的创建方法)"></a>时间和日期(其它的创建方法)</h1><p>Date.UTC()国际协调时间（时间统一时间）解决兼容问题</p>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><p>1.通用方法</p>
-<p>toString,toLacleString,valueOf</p>
-<p>2.日期格式化方法</p>
-<p>toDateString,toTimeString,toLocaleDateString,toLocaleTimeString,toUTCString,</p>
-<p>3.组件方法</p>
-<p>单独获取年，月，日等。一系列的get和set方法</p>
-
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
 
 
 

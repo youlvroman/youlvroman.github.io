@@ -8,19 +8,20 @@
 
 <title>
   
-    标签: js日期
+    Android内存优化篇
   
 </title>
 
-<meta name="description" content="程序开发，Android技术分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小猪">
-<meta property="og:url" content="http://yoursite.com/tags/js日期/index.html">
+<meta name="description" content="面试中内存优化的总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android内存优化篇">
+<meta property="og:url" content="http://yoursite.com/2017/05/14/memory-optimization/index.html">
 <meta property="og:site_name" content="一只小猪">
-<meta property="og:description" content="程序开发，Android技术分享">
+<meta property="og:description" content="面试中内存优化的总结">
+<meta property="og:updated_time" content="2017-05-14T08:05:24.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小猪">
-<meta name="twitter:description" content="程序开发，Android技术分享">
+<meta name="twitter:title" content="Android内存优化篇">
+<meta name="twitter:description" content="面试中内存优化的总结">
 
 
   <link rel="alternative" href="/atom.xml" title="一只小猪" type="application/atom+xml">
@@ -150,60 +151,68 @@
       
         <div style="max-width: 1000px">
       
-          <h1>js日期</h1>
-
-
+          <article id="post-memory-optimization" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android内存优化篇
+    </h1>
   
   
-    <div class="post-list">
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/03/js-time-date/" >
-  js时间日期
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/03/js-time-date/"><span class="article-date">
-  2017-05-03
+  <div class="article-info">
+    <span class="article-date">
+  2017-05-14
 </span>
-</a>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>面试中内存优化的总结<br><a id="more"></a></p>
+<h2 id="ListView优化"><a href="#ListView优化" class="headerlink" title="ListView优化"></a>ListView优化</h2><ol>
+<li>Item布局层级越少越好，使用hierarchyview查看</li>
+<li>复用convertview</li>
+<li>使用ViewHolder</li>
+<li>Item有图，使用异步加载</li>
+<li>快速滑动，不加载图片，使用滑动监听器，等停下来再加载</li>
+<li>Item有图片，应对图片进行适当压缩</li>
+<li>实现数据分页</li>
+</ol>
+<h2 id="减少不必要的全局变量"><a href="#减少不必要的全局变量" class="headerlink" title="减少不必要的全局变量"></a>减少不必要的全局变量</h2><ol>
+<li>减少static成员变量使用</li>
+<li>Context尽量使用getAppicationContext</li>
+</ol>
+<h2 id="Cursor游标回收"><a href="#Cursor游标回收" class="headerlink" title="Cursor游标回收"></a>Cursor游标回收</h2><p>访问数据库Cursor用完要关闭</p>
+<h2 id="Receiver接收器回收"><a href="#Receiver接收器回收" class="headerlink" title="Receiver接收器回收"></a>Receiver接收器回收</h2><p>调用registerReceiver后，在Activity生命周期结束要调用unregisterReceiver</p>
+<h2 id="Stream-File-流-文件-回收"><a href="#Stream-File-流-文件-回收" class="headerlink" title="Stream/File(流/文件)回收"></a>Stream/File(流/文件)回收</h2><h2 id="避免内部Getter和Setter方法"><a href="#避免内部Getter和Setter方法" class="headerlink" title="避免内部Getter和Setter方法"></a>避免内部Getter和Setter方法</h2><p>效率更高</p>
+<h2 id="for循环的使用"><a href="#for循环的使用" class="headerlink" title="for循环的使用"></a>for循环的使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.count; i++)&#123;&#125;</div></pre></td></tr></table></figure>
+<p>在for循环中使用成员变量比本地变量效率低，可以换成下面的方式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> counter = <span class="keyword">this</span>.count;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; counter; i++)&#123;&#125;</div></pre></td></tr></table></figure></p>
+
+  </div>
+  <footer class="article-footer">
+    <!--
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
         
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web开发/">web开发</a></li></ul>
-	</span>
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
+ -->
+    
 
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js日期/">js日期</a></li></ul>
-	</span>
+  </footer>
+</article>
 
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="日期的创建"><a href="#日期的创建" class="headerlink" title="日期的创建"></a>日期的创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var date = new Date();//系统当前时间</div><div class="line"></div><div class="line">	var d1 = new Date(1000);//1970,1,1,8:00开始走过1s	</div><div class="line"></div><div class="line">	//内部使用Date.parse()得到毫秒数</div><div class="line">	var d2 = new Date("4/18/2008");//2008.04.18</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>因为内部使用Date.parse()，存在浏览器兼容问题。日期书写不正确不同浏览器的表现不一样注意。</p>
-<h1 id="时间和日期-其它的创建方法"><a href="#时间和日期-其它的创建方法" class="headerlink" title="时间和日期(其它的创建方法)"></a>时间和日期(其它的创建方法)</h1><p>Date.UTC()国际协调时间（时间统一时间）解决兼容问题</p>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><p>1.通用方法</p>
-<p>toString,toLacleString,valueOf</p>
-<p>2.日期格式化方法</p>
-<p>toDateString,toTimeString,toLocaleDateString,toLocaleTimeString,toUTCString,</p>
-<p>3.组件方法</p>
-<p>单独获取年，月，日等。一系列的get和set方法</p>
-
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
 
 
 

@@ -98,7 +98,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">22</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">24</span></li></ul>
               </li>
             
           
@@ -162,6 +162,82 @@
           <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/05/14/android-performance-analysis/" >
+  Android性能分析
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/05/14/android-performance-analysis/"><span class="article-date">
+  2017-05-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>记录影响Android App性能的因素，如何分析出原因<br>
+          <p>
+            <a href="/2017/05/14/android-performance-analysis/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/05/14/memory-optimization/" >
+  Android内存优化篇
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/05/14/memory-optimization/"><span class="article-date">
+  2017-05-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>面试中内存优化的总结<br>
+          <p>
+            <a href="/2017/05/14/memory-optimization/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -615,145 +691,6 @@
 <p>3.组件方法</p>
 <p>单独获取年，月，日等。一系列的get和set方法</p>
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/03/js-array/" >
-  js数组
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/03/js-array/"><span class="article-date">
-  2017-05-03
-</span>
-</a>
-        
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/web开发/">web开发</a></li></ul>
-	</span>
-
-
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-array/">js-array</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h1><h1 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h1><p>1.toString()</p>
-<p>2.join()</p>
-<p>指定toString()方法返回的字符创分隔符号</p>
-<p>3.push()</p>
-<p>向数组末尾添加数据，返回新数组的长度</p>
-<p>4.pop()</p>
-<p>从数组末尾删除数据，返回删除的数据</p>
-<p>5.unshift()</p>
-<p>向数组开头添加数据，返回新数组的长度</p>
-<p>6.shift()</p>
-<p>删除数组开头的数据，返回被删除的数据</p>
-<p>7.concat()</p>
-<p>基于当前数组创建新数组并返回改数组</p>
-<p>8.slice()</p>
-<p>截取制定区域数组返回一个新的数组</p>
-<p>9.splice()</p>
-<p>删除，插入，替换</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var arr = ["小新",19,"北京","学生"];</div><div class="line">	var arr2 = arr.splice(2,1);</div><div class="line">	alert(arr2);</div><div class="line">	alert(arr);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>上面的是删除操作，第一个参数2指定的是数组下标，第二个是删除的个数，把北京删除掉了，并返回北京，原来的数组数据改变，只有三个数据。</p>
-<h1 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h1><p>sort()返回排序好的数组(不生成新的数组)；没有参数默认按照ASCII字符升序排序</p>
-<blockquote>
-<p>ascii编码：任何的字符数字在计算机里都有对应的编码，例如，a-97,A-65,0-48。</p>
-</blockquote>
-<p>sort()默认排序的是ascii码，要想改变排序规则，sort()提供一个带参数方法，方法的参数是一个函数，该函数提供排序依据给sort()，sort()根据返回的结果进行排序，看代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">paixu</span><span class="params">(m,n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (m &gt; n) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (m &lt; n) &#123;</div><div class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sor = [<span class="number">5</span>,<span class="number">43</span>,<span class="number">9</span>,<span class="number">18</span>];</div><div class="line">sor.sort(paixu);</div><div class="line">alert(sor);</div></pre></td></tr></table></figure>
-<p>或者这样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">paixu</span><span class="params">(m,n)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> m - m;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sor = [<span class="number">5</span>,<span class="number">43</span>,<span class="number">9</span>,<span class="number">18</span>];</div><div class="line">sor.sort(paixu);</div><div class="line">alert(sor);</div></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="../assets/paixu.png" alt=""></p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/03/process-thread/" >
-  进程和线程
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/03/process-thread/"><span class="article-date">
-  2017-05-03
-</span>
-</a>
-        
-	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-	</span>
-
-
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进程线程/">进程线程</a></li></ul>
-	</span>
-
-
-      </div>
-      <div class="article-entry">
-        
-          <h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p>进程：正在进行中的程序，一个应用就代表一个进程。windows任务管理器里面的每一个任务都是一个进程。</p>
-<p>线程：举个例子，360安全卫士就是那个进程，电脑清理和优化加速。我在360里面点击电脑清理，一个线程开始执行，这是我再点击优化加速，另一个<br>线程启动。电脑清理和优化加速就是线程，它们通过轮流抢占cpu，交替执行各自的代码，实现感官上的同时执行，直到各自的代码执行完毕，线程结束<br>(从内存消失)。</p>
-<blockquote>
-<p>进程可以看作是线程的集合，进程执行的本质是里面线程的执行，进程自己不能执行。</p>
-</blockquote>
-<h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><p>jvm是个多线程程序，主线程负责执行代码，垃圾回收线程负责回收垃圾对象。在Object类里面定义了方法finalize(),垃圾线程执行该方法清理垃圾对象。<br>每个线程需要执行的代码叫做任务代码，都有它的存储位置。线程随着任务的存在而存在，随着任务的结束而结束。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> Test();</div><div class="line">        <span class="keyword">new</span> Test();</div><div class="line">        <span class="keyword">new</span> Test();</div><div class="line"></div><div class="line">        System.gc();<span class="comment">//垃圾回收线程执行</span></div><div class="line"></div><div class="line">        System.out.println(<span class="string">"垃圾回收完毕"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        System.out.println(<span class="string">"垃圾回收执行"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Thread.currentThread()返回当前占用cpu的线程</p>
-<h1 id="多线程程序的内存分配"><a href="#多线程程序的内存分配" class="headerlink" title="多线程程序的内存分配"></a>多线程程序的内存分配</h1><p>多线程不遵循后进先出的原则，因为每个线程谁先执行完不确定。线程间是独立的，其它线程发生异常，不影响其它线程执行。都有各自的内存，所以线程执行完，进程就结束。</p>
-<h1 id="多线程的两种实现方式"><a href="#多线程的两种实现方式" class="headerlink" title="多线程的两种实现方式"></a>多线程的两种实现方式</h1><h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by on 16-9-20.</div><div class="line"> * 四个窗口同时卖票</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Ticket t1 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t2 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t3 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t4 = <span class="keyword">new</span> Ticket();</div><div class="line"></div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"sale"</span> + num--);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>执行的结果：</p>
-<p>Thread-0sale50</p>
-<p>Thread-2sale50</p>
-<p>Thread-1sale50</p>
-<p>Thread-3sale50</p>
-<p>以上代码存在问题的，四个线程卖了同一张票，都是50，原因是4个线程都有各自的50张票，第一个线程执行任务，判断num大于0，卖了一张票，任务执行完毕，这里是第二个问题，只卖了一张的问题，我们要让线程卖完50张后再结束，所以这里应该用循环，下面是修改后的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Ticket t1 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t2 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t3 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t4 = <span class="keyword">new</span> Ticket();</div><div class="line"></div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> num = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"sale"</span> + num--);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果：</p>
-<p>Thread-0sale50<br>Thread-2sale49<br>Thread-2sale45<br>Thread-1sale48<br>Thread-2sale44<br>Thread-3sale46<br>Thread-0sale47<br>Thread-3sale41<br>Thread-3sale39<br>Thread-2sale42<br>Thread-1sale43<br>Thread-2sale37<br>Thread-3sale38<br>Thread-0sale40<br>Thread-3sale34<br>Thread-3sale32<br>Thread-2sale35<br>Thread-1sale36<br>Thread-2sale30<br>Thread-3sale31<br>Thread-0sale33<br>Thread-3sale27<br>Thread-3sale25<br>Thread-2sale28<br>Thread-1sale29<br>Thread-2sale23<br>Thread-3sale24<br>Thread-0sale26<br>Thread-3sale20<br>Thread-3sale18<br>Thread-2sale21<br>Thread-1sale22<br>Thread-2sale16<br>Thread-3sale17<br>Thread-0sale19<br>Thread-3sale13<br>Thread-3sale11<br>Thread-2sale14<br>Thread-1sale15<br>Thread-1sale8<br>Thread-2sale9<br>Thread-2sale6<br>Thread-3sale10<br>Thread-0sale12<br>Thread-3sale4<br>Thread-3sale2<br>Thread-3sale1<br>Thread-2sale5<br>Thread-1sale7<br>Thread-0sale3</p>
-<p>把num变成了共享的变量，任务代码里用了while循环，新的问题是用了死循环后，票卖完了任务执结束不了，任务不结束，线程不结束，进程就一直运行；如果不用静态的共享变量，有其它办法吗？看第二种方法</p>
-<h3 id="第二种-实现接口"><a href="#第二种-实现接口" class="headerlink" title="第二种 实现接口"></a>第二种 实现接口</h3><p>解决4个线程公共享票的问题，需要使用创建线程的第二种方式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Tickets ticket = <span class="keyword">new</span> Tickets();</div><div class="line"></div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread(ticket);</div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread(ticket);</div><div class="line">        Thread t3 = <span class="keyword">new</span> Thread(ticket);</div><div class="line">        Thread t4 = <span class="keyword">new</span> Thread(ticket);</div><div class="line"></div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tickets</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"sale"</span> + num--);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这种方式对线程任务进行了描述，就是面向对象了。线程和任务分离，线程执行什么任务不再重要，只要实现了Runnalbe接口的子类对象都可以作为参数传递给Thread类构造方法。开发中常用第二种实现方式。</p>
-<p>第二种方式实现接口还可以继承父类</p>
-<h1 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h1><p><img src="../assets/thread_state.jpg" alt="线程状态图"></p>
-<p>线程的生命是从创建开始的，调用了start()后线程具有获取cpu的资格。如果获取到cpu，当前线程处于运行状态，线程可以执行任务代码；如果有其它线程跟它一起争抢cpu，而这时它没有获取到cpu,它状态处于阻塞，虽然有获取cpu的资格，但是没有获取到cpu。当运行中的线程执行完任务，它就自动变成消亡的状态。以上的状态的发生不是人为干预的，下面说说人为干预的状态。sleep()、wait()、notify()是人为可控的状态，如图</p>
-<h1 id="存在的问题-卖票"><a href="#存在的问题-卖票" class="headerlink" title="存在的问题(卖票)"></a>存在的问题(卖票)</h1><p>有4个线程执行卖票，t1,t2,t3,t4,结合上面代码24行分析，假设num = 1,t1先获取cpu执行到24行，判断num&gt;0成立，</p>
-<h1 id="同步函数的锁"><a href="#同步函数的锁" class="headerlink" title="同步函数的锁"></a>同步函数的锁</h1><p>同步函数的锁是this,静态函数进内存不存在对象，但是存在所属类的字节码文件，属于Class类型的对象，所以静态同步函数的锁是它所属类的字节码文件Ticket.class</p>
-<h1 id="线程死锁"><a href="#线程死锁" class="headerlink" title="线程死锁"></a>线程死锁</h1><h1 id="单例模式中懒汉式存在的线程安全问题"><a href="#单例模式中懒汉式存在的线程安全问题" class="headerlink" title="单例模式中懒汉式存在的线程安全问题"></a>单例模式中懒汉式存在的线程安全问题</h1>
         
       </div>
     </div>
