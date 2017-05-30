@@ -40,6 +40,7 @@
 
 
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body
   
@@ -177,6 +178,9 @@
 	</span>
 
 
+    <span id="busuanzi_container_page_pv">
+       阅读次数<span id="busuanzi_value_page_pv"></span>
+    </span>
   </div>
   <div class="article-entry">
     <h1 id="日期的创建"><a href="#日期的创建" class="headerlink" title="日期的创建"></a>日期的创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var date = new Date();//系统当前时间</div><div class="line"></div><div class="line">	var d1 = new Date(1000);//1970,1,1,8:00开始走过1s	</div><div class="line"></div><div class="line">	//内部使用Date.parse()得到毫秒数</div><div class="line">	var d2 = new Date("4/18/2008");//2008.04.18</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
