@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/30/hadoop-second-day/index.html">
 <meta property="og:site_name" content="程序员的世界">
 <meta property="og:description" content="Hadoop的dfs分布式文件系统的介绍">
-<meta property="og:updated_time" content="2017-05-30T09:06:37.386Z">
+<meta property="og:updated_time" content="2017-05-30T11:16:07.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop第二天">
 <meta name="twitter:description" content="Hadoop的dfs分布式文件系统的介绍">
@@ -180,7 +180,22 @@
   </div>
   <div class="article-entry">
     <p>Hadoop的dfs分布式文件系统的介绍<br><a id="more"></a></p>
-<h2 id="HDFS的shell操作"><a href="#HDFS的shell操作" class="headerlink" title="HDFS的shell操作"></a>HDFS的shell操作</h2><h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3>
+<blockquote>
+<p>HDFS的shell和linux的shell操作基本一样</p>
+</blockquote>
+<h2 id="HDFS的shell操作"><a href="#HDFS的shell操作" class="headerlink" title="HDFS的shell操作"></a>HDFS的shell操作</h2><ol>
+<li>查看帮助<pre><code>hadoop fs -help &lt;cmd&gt;
+</code></pre></li>
+<li>上传<pre><code>hadoop fs -put &lt;linux上文件&gt; &lt;hdfs上的路径&gt;
+</code></pre></li>
+<li>查看文件内容<pre><code>hadoop fs -cat &lt;hdfs上的路径&gt;
+</code></pre></li>
+<li>查看文件列表<pre><code>hadoop fs -ls /
+</code></pre></li>
+<li>下载文件<pre><code>hadoop fs -get &lt;hdfs上的路径&gt; &lt;linux上文件&gt;
+</code></pre></li>
+</ol>
+
   </div>
   <footer class="article-footer">
     <!--
@@ -206,6 +221,22 @@
 
 
 
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'youlv'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
 
