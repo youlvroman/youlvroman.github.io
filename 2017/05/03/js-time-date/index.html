@@ -29,7 +29,7 @@
 
 
 
-  <link rel="icon" href="/favicon.png">
+  <link rel="icon" href="/favicon.jpg">
 
 
 <link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
@@ -183,6 +183,11 @@
     </span>
   </div>
   <div class="article-entry">
+    
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#日期的创建"><span class="toc-text">日期的创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#时间和日期-其它的创建方法"><span class="toc-text">时间和日期(其它的创建方法)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a></li></ol>
+</div>
+
     <h1 id="日期的创建"><a href="#日期的创建" class="headerlink" title="日期的创建"></a>日期的创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var date = new Date();//系统当前时间</div><div class="line"></div><div class="line">	var d1 = new Date(1000);//1970,1,1,8:00开始走过1s	</div><div class="line"></div><div class="line">	//内部使用Date.parse()得到毫秒数</div><div class="line">	var d2 = new Date("4/18/2008");//2008.04.18</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>因为内部使用Date.parse()，存在浏览器兼容问题。日期书写不正确不同浏览器的表现不一样注意。</p>
 <h1 id="时间和日期-其它的创建方法"><a href="#时间和日期-其它的创建方法" class="headerlink" title="时间和日期(其它的创建方法)"></a>时间和日期(其它的创建方法)</h1><p>Date.UTC()国际协调时间（时间统一时间）解决兼容问题</p>

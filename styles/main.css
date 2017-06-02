@@ -585,6 +585,16 @@ body {
     display: none;
   }
 }
+#toc {
+  float: right;
+  background-color: #eee;
+  font-size: 0.8em;
+  color: #19734b;
+  margin: 5px;
+}
+#toc .toc {
+  list-style: none;
+}
 .post-list {
   position: relative;
   padding-left: 0;

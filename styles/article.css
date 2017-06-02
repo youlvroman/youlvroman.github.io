@@ -167,3 +167,13 @@
     display: none;
   }
 }
+#toc {
+  float: right;
+  background-color: #eee;
+  font-size: 0.8em;
+  color: color-link;
+  margin: 5px;
+}
+#toc .toc {
+  list-style: none;
+}

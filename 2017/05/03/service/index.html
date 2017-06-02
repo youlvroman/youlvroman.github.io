@@ -29,7 +29,7 @@
 
 
 
-  <link rel="icon" href="/favicon.png">
+  <link rel="icon" href="/favicon.jpg">
 
 
 <link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
@@ -183,6 +183,11 @@
     </span>
   </div>
   <div class="article-entry">
+    
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#绑定服务"><span class="toc-text">绑定服务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定服务的步骤"><span class="toc-text">绑定服务的步骤</span></a></li></ol></li></ol>
+</div>
+
     <h1 id="绑定服务"><a href="#绑定服务" class="headerlink" title="绑定服务"></a>绑定服务</h1><h2 id="绑定服务的步骤"><a href="#绑定服务的步骤" class="headerlink" title="绑定服务的步骤"></a>绑定服务的步骤</h2><p>1.客户端通过bindService()方法来绑定一个服务对象，如果绑定成功，会回调ServiceConnection接口的onServiceConnected()方法。  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 绑定服务</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> v</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bindService</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">    Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, MyService.class);</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Context.BIND_AUTO_CREATE 没有创建自动创建;有就绑定</div><div class="line">     * bindService()异步方法，执行完立即返回，什么时候成功回调connection</div><div class="line">     */</div><div class="line">    bindService(intent, connection, Context.BIND_AUTO_CREATE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>绑定成功会调用下面接口的方法</p>

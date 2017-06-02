@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/30/hadoop-second-day/index.html">
 <meta property="og:site_name" content="程序员的世界">
 <meta property="og:description" content="Hadoop的dfs分布式文件系统的介绍">
-<meta property="og:updated_time" content="2017-05-30T11:16:07.525Z">
+<meta property="og:updated_time" content="2017-05-30T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop第二天">
 <meta name="twitter:description" content="Hadoop的dfs分布式文件系统的介绍">
@@ -29,7 +29,7 @@
 
 
 
-  <link rel="icon" href="/favicon.png">
+  <link rel="icon" href="/favicon.jpg">
 
 
 <link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
@@ -179,6 +179,11 @@
     </span>
   </div>
   <div class="article-entry">
+    
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HDFS的shell操作"><span class="toc-text">HDFS的shell操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDFS的架构"><span class="toc-text">HDFS的架构</span></a></li></ol>
+</div>
+
     <p>Hadoop的dfs分布式文件系统的介绍<br><a id="more"></a></p>
 <blockquote>
 <p>HDFS的shell和linux的shell操作基本一样</p>
@@ -194,6 +199,14 @@
 </code></pre></li>
 <li>下载文件<pre><code>hadoop fs -get &lt;hdfs上的路径&gt; &lt;linux上文件&gt;
 </code></pre></li>
+</ol>
+<h2 id="HDFS的架构"><a href="#HDFS的架构" class="headerlink" title="HDFS的架构"></a>HDFS的架构</h2><blockquote>
+<p>HDFS架构由三个角色组成，分别是NameNode,DataNode,Secondary NameNode;各自的作用分别是</p>
+</blockquote>
+<ol>
+<li>NameNode。管理者，管理DataNode干活</li>
+<li>DataNode。存贮数据</li>
+<li>Secondary NameNode。可以理解为NameNode的助理，帮助NameNode干活。它并不是NameNode的热备，不能代替NameNode干活，NameNode宕机，也不会自动切换到它上面工作，并且NameNode宕机后它也不工作了。</li>
 </ol>
 
   </div>
