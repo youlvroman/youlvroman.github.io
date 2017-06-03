@@ -8,20 +8,23 @@
 
 <title>
   
-    标签: bitmap
+    hadoop-second-day
   
 </title>
 
-<meta name="description" content="程序开发，技术分享">
+<meta name="description" content="Hadoop的dfs分布式文件系统的介绍">
 <meta name="keywords" content="吕游的博客,吕游,博客,blog,IT,技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="程序师的世界">
-<meta property="og:url" content="http://yoursite.com/tags/bitmap/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hadoop-second-day">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/hadoop-second-day/index.html">
 <meta property="og:site_name" content="程序师的世界">
-<meta property="og:description" content="程序开发，技术分享">
+<meta property="og:description" content="Hadoop的dfs分布式文件系统的介绍">
+<meta property="og:image" content="http://yoursite.com/2017/06/03/hadoop-second-day/hdfs-principle.PNG">
+<meta property="og:updated_time" content="2017-06-03T06:24:43.997Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程序师的世界">
-<meta name="twitter:description" content="程序开发，技术分享">
+<meta name="twitter:title" content="hadoop-second-day">
+<meta name="twitter:description" content="Hadoop的dfs分布式文件系统的介绍">
+<meta name="twitter:image" content="http://yoursite.com/2017/06/03/hadoop-second-day/hdfs-principle.PNG">
 
 
   <link rel="alternative" href="/atom.xml" title="程序师的世界" type="application/atom+xml">
@@ -152,58 +155,109 @@
       
         <div style="max-width: 1000px">
       
-          <h1>bitmap</h1>
-
-
+          <article id="post-hadoop-second-day" class="article article-type-post">
+  
+    <h1 class="article-header">
+      hadoop-second-day
+    </h1>
   
   
-    <div class="post-list">
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/05/08/about-bitmap/" >
-  bitmap占用内存大小
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/05/08/about-bitmap/"><span class="article-date">
-  2017-05-08
+  <div class="article-info">
+    <span class="article-date">
+  2017-06-03
 </span>
-</a>
+
+    
+
+    
+
+    <span id="busuanzi_container_page_pv">
+       阅读次数<span id="busuanzi_value_page_pv"></span>
+    </span>
+  </div>
+  <div class="article-entry">
+    
+<div id="toc">
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的原理"><span class="toc-text">HDFS的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何设计分布式文件系统"><span class="toc-text">如何设计分布式文件系统？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的shell操作"><span class="toc-text">HDFS的shell操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的架构"><span class="toc-text">HDFS的架构</span></a></li></ol>
+</div>
+
+    <p>Hadoop的dfs分布式文件系统的介绍<br><a id="more"></a></p>
+<blockquote>
+<p>HDFS的shell和linux的shell操作基本一样</p>
+</blockquote>
+<h2 id="hdfs的原理"><a href="#HDFS的原理" class="headerlink" title="HDFS的原理"></a>HDFS的原理</h2><h3 id="如何设计分布式文件系统"><a href="#如何设计分布式文件系统？" class="headerlink" title="如何设计分布式文件系统？"></a>如何设计分布式文件系统？</h3><img src="/2017/06/03/hadoop-second-day/hdfs-principle.PNG" alt="HDFS原理图" title="HDFS原理图">
+<p><strong>图是别人的</strong></p>
+<blockquote>
+<p>如何上传a.log文件？</p>
+</blockquote>
+<p>过程：a.log(200M),client去请求NameNode，我要上传文件;NameNode维护着一些元数据(记录机器存贮容量等信息，账本)，NameNode计算第二个DataNode可以存贮a.log，于是NameNode把信息返给client，client将a.log写入第二个DataNode。</p>
+<blockquote>
+<p>如何保证数据安全？</p>
+</blockquote>
+<p>冗余存贮。DataNode与DataNode之间进行数据的复制，直到达到配制的副本数量。当写入dataNode的一个block完成，就会进行水平复制，复制完成还会反馈回去，NameNode进行记录。</p>
+<h2 id="hdfs的shell操作"><a href="#HDFS的shell操作" class="headerlink" title="HDFS的shell操作"></a>HDFS的shell操作</h2><ol>
+<li>查看帮助<pre><code>hadoop fs -help &lt;cmd&gt;
+</code></pre></li>
+<li>上传<pre><code>hadoop fs -put &lt;linux上文件&gt; &lt;hdfs上的路径&gt;
+</code></pre></li>
+<li>查看文件内容<pre><code>hadoop fs -cat &lt;hdfs上的路径&gt;
+</code></pre></li>
+<li>查看文件列表<pre><code>hadoop fs -ls /
+</code></pre></li>
+<li>下载文件<pre><code>hadoop fs -get &lt;hdfs上的路径&gt; &lt;linux上文件&gt;
+</code></pre></li>
+</ol>
+<h2 id="hdfs的架构"><a href="#HDFS的架构" class="headerlink" title="HDFS的架构"></a>HDFS的架构</h2><blockquote>
+<p>HDFS架构由三个角色组成，分别是NameNode,DataNode,Secondary NameNode;各自的作用分别是</p>
+</blockquote>
+<ol>
+<li>NameNode。管理者，管理DataNode干活</li>
+<li>DataNode。存贮数据</li>
+<li>Secondary NameNode。可以理解为NameNode的助理，帮助NameNode干活。它并不是NameNode的热备，不能代替NameNode干活，NameNode宕机，也不会自动切换到它上面工作，并且NameNode宕机后它也不工作了。</li>
+</ol>
+
+  </div>
+  <footer class="article-footer">
+    <!--
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
         
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
-        
-	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitmap/">bitmap</a></li></ul>
-	</span>
+ -->
+    
 
-
-        <!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-        <span id="busuanzi_container_page_pv">
-           阅读次数<span id="busuanzi_value_page_pv"></span>
-        </span>-->
-      </div>
-      <div class="article-entry">
-        
-          <p>android中bitmap究竟占用多大内存，看了这篇文章后的总结<a href="http://bugly.qq.com/bbs/forum.php?mod=viewthread&amp;tid=498" target="_blank" rel="external">Android 开发绕不过的坑：你的 Bitmap 究竟占多大内存？</a><br>
-          <p>
-            <a href="/2017/05/08/about-bitmap/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
+  </footer>
+</article>
 
 
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'youlv'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
 
