@@ -284,7 +284,7 @@
       </div>
       <div class="article-entry">
         
-          <p>面试中内存优化的总结<br>
+          <p>Android内存优化<br>
           <p>
             <a href="/2017/05/14/memory-optimization/">
               阅读全文
@@ -426,9 +426,7 @@
       </div>
       <div class="article-entry">
         
-          <h2 id="引用类型的理解"><a href="#引用类型的理解" class="headerlink" title="引用类型的理解"></a>引用类型的理解</h2><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>函数或者变量在程序中可以被使用的范围</p>
-<p><em>if语句的大括号不属于作用域</em></p>
-<p><em>for语句的大括号不属于作用域</em><br>
+          <p>js面向对象<br>
           <p>
             <a href="/2017/05/03/js-oop/">
               阅读全文
@@ -478,30 +476,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>js中的函数对应Function，和数组类似。每个函数都是一个Function类型的对象，函数是引用类型，既然是引用类型，就有属性和方法。</p>
-<h1 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h1><p>1.普通方式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function fun(num1,num2) &#123;</div><div class="line">		return num1 + num2;</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>2.变量方式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var fun = function() &#123;</div><div class="line">		return "hello";</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>3.new的方式(不建议使用，运行性能较以上两个低)</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var fun = new Function("n1","n2","return n1 + n2");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>函数可以作为参数传递给另一个函数</p>
-<h1 id="内部属性"><a href="#内部属性" class="headerlink" title="内部属性"></a>内部属性</h1><p>1.arguments属性，指向一个类似数组但不是数组的对象，存储的是实际传递给函数的参数，而不限于函数定义的参数列表。</p>
-<p>例子：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function show(a,b)&#123;</div><div class="line">		if (arguments.lenght == 2) &#123;</div><div class="line">			return a + b;</div><div class="line">		&#125; else if (arguments == 3) &#123;</div><div class="line">			return arguments[0] + arguments[1] + arguments[2];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	show("hello","world","roman");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>2.lenght属性，定义函数时参数个数</p>
-<p>3.arguments对象中的callee属性，表示函数对象本身的引用</p>
-<p>阶乘</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function jie(n)&#123;</div><div class="line">		if (n == 1) &#123;</div><div class="line">			return 1;</div><div class="line">		&#125; else &#123;</div><div class="line">			reutn n * arguments.call(n - 1);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	show("hello","world","roman");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>这样写及时函数名称改变也不会出错。</p>
-<h1 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h1><p><em>如果局部变量和全局变量同名，用局部变量</em></p>
-<h1 id="this的理解"><a href="#this的理解" class="headerlink" title="this的理解"></a>this的理解</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	function show(name)&#123;</div><div class="line">		alert(name);</div><div class="line">	&#125;</div><div class="line">	var f = show;</div><div class="line">	f("lily");</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>show是函数对象的引用，存储的是函数对象内存的地址。第5行的赋值就是简单的变量赋值。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var name = "li";</div><div class="line">	function show()&#123;</div><div class="line">		alert(name);</div><div class="line">	&#125;</div><div class="line">	show();//this指向window对象</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h1 id="函数内部方法"><a href="#函数内部方法" class="headerlink" title="函数内部方法"></a>函数内部方法</h1><p>Function内部有个prototype属性，该属性有两个方法，call()和apply()。作用：改变调用函数的对象</p>
-
+          <p>js函数<br>
+          <p>
+            <a href="/2017/05/03/js-function/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -546,18 +526,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var s = "abc";</div><div class="line">	var os = new String("abc");</div><div class="line"></div><div class="line">	alert(s.lenght);//基本类型使用引用类型的属性</div><div class="line">	alert(s == os);//true</div><div class="line">	alert(s === os);//false</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>基本类型和引用类型区别：引用类型可以添加属性方法，基本类型不可以。基本类型可以使用引用类型的属性和方法。</p>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var ss = "abc123def$#";</div><div class="line"></div><div class="line">	//根据索引得到字符串中的一个字符</div><div class="line">	alert(ss.charAt(0));//a</div><div class="line"></div><div class="line">	//得到字符对应的编码</div><div class="line">	alert(ss.charCodeAt(3));//</div><div class="line"></div><div class="line">	//根据编码生成字符</div><div class="line">	var str = String.fromCharCode(97,64);</div><div class="line">	alert(str);//a@</div><div class="line"></div><div class="line">	alert(ss.indexOf("c"));//字符在字符串第一次出现的位置</div><div class="line">	//lastIndexOf()字符最后一次出现的位置</div><div class="line">	//indexOf()</div><div class="line"></div><div class="line">	var email = "zhang.234@qq.com";</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>indexOf(“”,)</p>
-<p>substr()截取字符串,第一个参数是开始的索引，第二个参数是截取的个数</p>
-<p>substring()第一个参数是开始的索引，第二个参数是结束索引</p>
-<p>match()以数组形式返回，找不到匹配返回null</p>
-<p>search()返回第一次位置</p>
-<p>replace()替换，返回一个新的字符串，原有的字符串不变。</p>
-<p>split()切割字符串</p>
-<p>toUpperCase(),toLowerCase()大小写转换，原有字符串不变，返回新的字符串。</p>
-
+          <p>js字符串<br>
+          <p>
+            <a href="/2017/05/03/js-string/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -602,96 +576,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h1><p>为了验证字符串的合法性，同时减少代码量。验证客户端输入合法性，减少服务器端资源占用。</p>
-<h1 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h1><p>1.new的方式</p>
-<p>var reg = new RegExp(string,pattern);i:不区分大小写，g:全局匹配，m:多行匹配。</p>
-<p>2.字面量方式</p>
-<p>var reg = /hello/ig;</p>
-<blockquote>
-<p>test()和exec()，test()返回布尔，exec()返回匹配的字符。exec()返回的是数组对象，没有匹配的，返回null.</p>
-</blockquote>
-<h1 id="string中提供的正则方法"><a href="#String中提供的正则方法" class="headerlink" title="String中提供的正则方法"></a>String中提供的正则方法</h1><p>1.match(),返回数组或者null,返回第一个匹配</p>
-<p>2.search(),返回第一个和匹配表达式位置，只返回第一个位置，不需要全局匹配。</p>
-<p>3.replace(pattern,replacement),替换匹配的字符串，默认只替换第一个符合。</p>
-<p>4.split(pattern),按照正则表达式切割。</p>
-<h1 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h1><ol>
-<li>.代表任意字符，换行除外。</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">任意字符，换行除外</td>
-</tr>
-<tr>
-<td style="text-align:center">?</td>
-<td style="text-align:center">0次或1次</td>
-</tr>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">0次或多次</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">1次或多次</td>
-</tr>
-<tr>
-<td style="text-align:center">{m,n}</td>
-<td style="text-align:center">m次到n次</td>
-</tr>
-<tr>
-<td style="text-align:center">[a-z]</td>
-<td style="text-align:center">限定某一位上取值范围</td>
-</tr>
-<tr>
-<td style="text-align:center">[^a-z]</td>
-<td style="text-align:center">取反</td>
-</tr>
-<tr>
-<td style="text-align:center">\s</td>
-<td style="text-align:center">空白字符，空格，制表，换行</td>
-</tr>
-</tbody>
-</table>
-<p>{m,}至少出现m次，{m}出现m次</p>
-<p>\d等价[0-9],\D等于[^0-9]</p>
-<p>\w等于[a-zA-Z0-9]，\W等于[^a-zA-Z0-9]</p>
-<p>^匹配开头，$匹配结尾</p>
-<p>|或者，匹配给出任意</p>
-<p>()分组，RegExp.$1取第一个分组值</p>
-<h1 id="贪婪-惰性"><a href="#贪婪-惰性" class="headerlink" title="贪婪 惰性"></a>贪婪 惰性</h1><p>贪婪：+ <em> ? {m,n} {m,} {m} 惰性：+？ </em>? ?? {m,n}? {m,}? {m}?</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var reg = /6(.*)6/;</div><div class="line">	var str = "study 6javascript6 6javascript6 6javascript6";</div><div class="line">	alert(str.replace(reg,'$1'));</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>贪婪的意思就是匹配表达式最大的，能匹配多少就匹配多少(尽量多的)，结果下如图</p>
-<p><img src="../assets/reg.png" alt=""></p>
-<p>惰性与之相反，尽量匹配少的</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var reg = /6(.*?)6/;</div><div class="line">	var str = "study 6javascript6 6javascript6 6javascript6";</div><div class="line">	alert(str.replace(reg,'$1'));</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>结果是”study javascript 6javascript6 6javascript6”，只匹配第一组。</p>
-<h1 id="捕获性分组和非捕获性分组"><a href="#捕获性分组和非捕获性分组" class="headerlink" title="捕获性分组和非捕获性分组"></a>捕获性分组和非捕获性分组</h1><p>1.捕获性分组</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /([a-z]+)\s(\d&#123;4&#125;)/;</div><div class="line">	var str = "hello 2020";</div><div class="line">	alert(reg.exec(str));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>看结果</p>
-<p><img src="../assets/capture.png" alt=""></p>
-<p>2.非捕获性分组</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /([a-z]+)\s(?:\d&#123;4&#125;)/;</div><div class="line">	var str = "hello 2020";</div><div class="line">	alert(reg.exec(str));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>在不想捕获的分组前加如?:</p>
-<p>3.前瞻捕获</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /goo(?=gle)/;</div><div class="line">	var str = "google";</div><div class="line">	alert(reg.exec(str));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>匹配后面是gle那样的字符，结果是</p>
-<p><img src="../assets/front-cap.png" alt=""></p>
-<h1 id="换行模式"><a href="#换行模式" class="headerlink" title="换行模式"></a>换行模式</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /^\d+/;</div><div class="line">	var str = "1.google\n2.oracle\n3.microsoft";</div><div class="line">	alert(str.replace(reg,"#"));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p><img src="../assets/wrap.png" alt=""></p>
-<p>结果是只能替换第一个，用换行模式后可以匹配，像这样</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /^\d+/m;</div><div class="line">	var str = "1.google\n2.oracle\n3.microsoft";</div><div class="line">	alert(str.replace(reg,"#"));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><p>1.验证手机号</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /^1[3578]\d&#123;9&#125;$/;</div><div class="line">	var str = "13947583746";</div><div class="line">	alert(reg.test(str));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>2.把手机号中间4位替换为<em>**</em></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var reg = /(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;3&#125;)/;</div><div class="line">	var num = "13852289809";</div><div class="line">	alert(num.replace(reg,'$1****$2'));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-
+          <p>js正则表达式<br>
+          <p>
+            <a href="/2017/05/03/js-reg/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -736,16 +626,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="日期的创建"><a href="#日期的创建" class="headerlink" title="日期的创建"></a>日期的创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var date = new Date();//系统当前时间</div><div class="line"></div><div class="line">	var d1 = new Date(1000);//1970,1,1,8:00开始走过1s	</div><div class="line"></div><div class="line">	//内部使用Date.parse()得到毫秒数</div><div class="line">	var d2 = new Date("4/18/2008");//2008.04.18</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>因为内部使用Date.parse()，存在浏览器兼容问题。日期书写不正确不同浏览器的表现不一样注意。</p>
-<h1 id="时间和日期其它的创建方法"><a href="#时间和日期-其它的创建方法" class="headerlink" title="时间和日期(其它的创建方法)"></a>时间和日期(其它的创建方法)</h1><p>Date.UTC()国际协调时间（时间统一时间）解决兼容问题</p>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><p>1.通用方法</p>
-<p>toString,toLacleString,valueOf</p>
-<p>2.日期格式化方法</p>
-<p>toDateString,toTimeString,toLocaleDateString,toLocaleTimeString,toUTCString,</p>
-<p>3.组件方法</p>
-<p>单独获取年，月，日等。一系列的get和set方法</p>
-
+          <p>js时间日期<br>
+          <p>
+            <a href="/2017/05/03/js-time-date/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>

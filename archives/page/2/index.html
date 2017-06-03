@@ -200,16 +200,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="日期的创建"><a href="#日期的创建" class="headerlink" title="日期的创建"></a>日期的创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var date = new Date();//系统当前时间</div><div class="line"></div><div class="line">	var d1 = new Date(1000);//1970,1,1,8:00开始走过1s	</div><div class="line"></div><div class="line">	//内部使用Date.parse()得到毫秒数</div><div class="line">	var d2 = new Date("4/18/2008");//2008.04.18</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>因为内部使用Date.parse()，存在浏览器兼容问题。日期书写不正确不同浏览器的表现不一样注意。</p>
-<h1 id="时间和日期其它的创建方法"><a href="#时间和日期-其它的创建方法" class="headerlink" title="时间和日期(其它的创建方法)"></a>时间和日期(其它的创建方法)</h1><p>Date.UTC()国际协调时间（时间统一时间）解决兼容问题</p>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><p>1.通用方法</p>
-<p>toString,toLacleString,valueOf</p>
-<p>2.日期格式化方法</p>
-<p>toDateString,toTimeString,toLocaleDateString,toLocaleTimeString,toUTCString,</p>
-<p>3.组件方法</p>
-<p>单独获取年，月，日等。一系列的get和set方法</p>
-
+          <p>js时间日期<br>
+          <p>
+            <a href="/2017/05/03/js-time-date/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -254,36 +250,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h1><h1 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h1><p>1.toString()</p>
-<p>2.join()</p>
-<p>指定toString()方法返回的字符创分隔符号</p>
-<p>3.push()</p>
-<p>向数组末尾添加数据，返回新数组的长度</p>
-<p>4.pop()</p>
-<p>从数组末尾删除数据，返回删除的数据</p>
-<p>5.unshift()</p>
-<p>向数组开头添加数据，返回新数组的长度</p>
-<p>6.shift()</p>
-<p>删除数组开头的数据，返回被删除的数据</p>
-<p>7.concat()</p>
-<p>基于当前数组创建新数组并返回改数组</p>
-<p>8.slice()</p>
-<p>截取制定区域数组返回一个新的数组</p>
-<p>9.splice()</p>
-<p>删除，插入，替换</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var arr = ["小新",19,"北京","学生"];</div><div class="line">	var arr2 = arr.splice(2,1);</div><div class="line">	alert(arr2);</div><div class="line">	alert(arr);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>上面的是删除操作，第一个参数2指定的是数组下标，第二个是删除的个数，把北京删除掉了，并返回北京，原来的数组数据改变，只有三个数据。</p>
-<h1 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h1><p>sort()返回排序好的数组(不生成新的数组)；没有参数默认按照ASCII字符升序排序</p>
-<blockquote>
-<p>ascii编码：任何的字符数字在计算机里都有对应的编码，例如，a-97,A-65,0-48。</p>
-</blockquote>
-<p>sort()默认排序的是ascii码，要想改变排序规则，sort()提供一个带参数方法，方法的参数是一个函数，该函数提供排序依据给sort()，sort()根据返回的结果进行排序，看代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">paixu</span><span class="params">(m,n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (m &gt; n) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (m &lt; n) &#123;</div><div class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sor = [<span class="number">5</span>,<span class="number">43</span>,<span class="number">9</span>,<span class="number">18</span>];</div><div class="line">sor.sort(paixu);</div><div class="line">alert(sor);</div></pre></td></tr></table></figure>
-<p>或者这样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">paixu</span><span class="params">(m,n)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> m - m;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sor = [<span class="number">5</span>,<span class="number">43</span>,<span class="number">9</span>,<span class="number">18</span>];</div><div class="line">sor.sort(paixu);</div><div class="line">alert(sor);</div></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="../assets/paixu.png" alt=""></p>
-
+          <p>js数组介绍<br>
+          <p>
+            <a href="/2017/05/03/js-array/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -328,35 +300,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p>进程：正在进行中的程序，一个应用就代表一个进程。windows任务管理器里面的每一个任务都是一个进程。</p>
-<p>线程：举个例子，360安全卫士就是那个进程，电脑清理和优化加速。我在360里面点击电脑清理，一个线程开始执行，这是我再点击优化加速，另一个<br>线程启动。电脑清理和优化加速就是线程，它们通过轮流抢占cpu，交替执行各自的代码，实现感官上的同时执行，直到各自的代码执行完毕，线程结束<br>(从内存消失)。</p>
-<blockquote>
-<p>进程可以看作是线程的集合，进程执行的本质是里面线程的执行，进程自己不能执行。</p>
-</blockquote>
-<h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><p>jvm是个多线程程序，主线程负责执行代码，垃圾回收线程负责回收垃圾对象。在Object类里面定义了方法finalize(),垃圾线程执行该方法清理垃圾对象。<br>每个线程需要执行的代码叫做任务代码，都有它的存储位置。线程随着任务的存在而存在，随着任务的结束而结束。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">new</span> Test();</div><div class="line">        <span class="keyword">new</span> Test();</div><div class="line">        <span class="keyword">new</span> Test();</div><div class="line"></div><div class="line">        System.gc();<span class="comment">//垃圾回收线程执行</span></div><div class="line"></div><div class="line">        System.out.println(<span class="string">"垃圾回收完毕"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        System.out.println(<span class="string">"垃圾回收执行"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Thread.currentThread()返回当前占用cpu的线程</p>
-<h1 id="多线程程序的内存分配"><a href="#多线程程序的内存分配" class="headerlink" title="多线程程序的内存分配"></a>多线程程序的内存分配</h1><p>多线程不遵循后进先出的原则，因为每个线程谁先执行完不确定。线程间是独立的，其它线程发生异常，不影响其它线程执行。都有各自的内存，所以线程执行完，进程就结束。</p>
-<h1 id="多线程的两种实现方式"><a href="#多线程的两种实现方式" class="headerlink" title="多线程的两种实现方式"></a>多线程的两种实现方式</h1><h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by on 16-9-20.</div><div class="line"> * 四个窗口同时卖票</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Ticket t1 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t2 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t3 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t4 = <span class="keyword">new</span> Ticket();</div><div class="line"></div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">            System.out.println(Thread.currentThread().getName() + <span class="string">"sale"</span> + num--);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>执行的结果：</p>
-<p>Thread-0sale50</p>
-<p>Thread-2sale50</p>
-<p>Thread-1sale50</p>
-<p>Thread-3sale50</p>
-<p>以上代码存在问题的，四个线程卖了同一张票，都是50，原因是4个线程都有各自的50张票，第一个线程执行任务，判断num大于0，卖了一张票，任务执行完毕，这里是第二个问题，只卖了一张的问题，我们要让线程卖完50张后再结束，所以这里应该用循环，下面是修改后的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Ticket t1 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t2 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t3 = <span class="keyword">new</span> Ticket();</div><div class="line">        Ticket t4 = <span class="keyword">new</span> Ticket();</div><div class="line"></div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> num = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"sale"</span> + num--);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果：</p>
-<p>Thread-0sale50<br>Thread-2sale49<br>Thread-2sale45<br>Thread-1sale48<br>Thread-2sale44<br>Thread-3sale46<br>Thread-0sale47<br>Thread-3sale41<br>Thread-3sale39<br>Thread-2sale42<br>Thread-1sale43<br>Thread-2sale37<br>Thread-3sale38<br>Thread-0sale40<br>Thread-3sale34<br>Thread-3sale32<br>Thread-2sale35<br>Thread-1sale36<br>Thread-2sale30<br>Thread-3sale31<br>Thread-0sale33<br>Thread-3sale27<br>Thread-3sale25<br>Thread-2sale28<br>Thread-1sale29<br>Thread-2sale23<br>Thread-3sale24<br>Thread-0sale26<br>Thread-3sale20<br>Thread-3sale18<br>Thread-2sale21<br>Thread-1sale22<br>Thread-2sale16<br>Thread-3sale17<br>Thread-0sale19<br>Thread-3sale13<br>Thread-3sale11<br>Thread-2sale14<br>Thread-1sale15<br>Thread-1sale8<br>Thread-2sale9<br>Thread-2sale6<br>Thread-3sale10<br>Thread-0sale12<br>Thread-3sale4<br>Thread-3sale2<br>Thread-3sale1<br>Thread-2sale5<br>Thread-1sale7<br>Thread-0sale3</p>
-<p>把num变成了共享的变量，任务代码里用了while循环，新的问题是用了死循环后，票卖完了任务执结束不了，任务不结束，线程不结束，进程就一直运行；如果不用静态的共享变量，有其它办法吗？看第二种方法</p>
-<h3 id="第二种-实现接口"><a href="#第二种-实现接口" class="headerlink" title="第二种 实现接口"></a>第二种 实现接口</h3><p>解决4个线程公共享票的问题，需要使用创建线程的第二种方式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Tickets ticket = <span class="keyword">new</span> Tickets();</div><div class="line"></div><div class="line">        Thread t1 = <span class="keyword">new</span> Thread(ticket);</div><div class="line">        Thread t2 = <span class="keyword">new</span> Thread(ticket);</div><div class="line">        Thread t3 = <span class="keyword">new</span> Thread(ticket);</div><div class="line">        Thread t4 = <span class="keyword">new</span> Thread(ticket);</div><div class="line"></div><div class="line">        t1.start();</div><div class="line">        t2.start();</div><div class="line">        t3.start();</div><div class="line">        t4.start();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tickets</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">"sale"</span> + num--);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这种方式对线程任务进行了描述，就是面向对象了。线程和任务分离，线程执行什么任务不再重要，只要实现了Runnalbe接口的子类对象都可以作为参数传递给Thread类构造方法。开发中常用第二种实现方式。</p>
-<p>第二种方式实现接口还可以继承父类</p>
-<h1 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h1><p><img src="../assets/thread_state.jpg" alt="线程状态图"></p>
-<p>线程的生命是从创建开始的，调用了start()后线程具有获取cpu的资格。如果获取到cpu，当前线程处于运行状态，线程可以执行任务代码；如果有其它线程跟它一起争抢cpu，而这时它没有获取到cpu,它状态处于阻塞，虽然有获取cpu的资格，但是没有获取到cpu。当运行中的线程执行完任务，它就自动变成消亡的状态。以上的状态的发生不是人为干预的，下面说说人为干预的状态。sleep()、wait()、notify()是人为可控的状态，如图</p>
-<h1 id="存在的问题卖票"><a href="#存在的问题-卖票" class="headerlink" title="存在的问题(卖票)"></a>存在的问题(卖票)</h1><p>有4个线程执行卖票，t1,t2,t3,t4,结合上面代码24行分析，假设num = 1,t1先获取cpu执行到24行，判断num&gt;0成立，</p>
-<h1 id="同步函数的锁"><a href="#同步函数的锁" class="headerlink" title="同步函数的锁"></a>同步函数的锁</h1><p>同步函数的锁是this,静态函数进内存不存在对象，但是存在所属类的字节码文件，属于Class类型的对象，所以静态同步函数的锁是它所属类的字节码文件Ticket.class</p>
-<h1 id="线程死锁"><a href="#线程死锁" class="headerlink" title="线程死锁"></a>线程死锁</h1><h1 id="单例模式中懒汉式存在的线程安全问题"><a href="#单例模式中懒汉式存在的线程安全问题" class="headerlink" title="单例模式中懒汉式存在的线程安全问题"></a>单例模式中懒汉式存在的线程安全问题</h1>
+          <p>java多线程<br>
+          <p>
+            <a href="/2017/05/03/process-thread/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -401,16 +350,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="泛型解决的问题"><a href="#泛型解决的问题" class="headerlink" title="泛型解决的问题"></a>泛型解决的问题</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
-<blockquote>
-<p>问题会在编译时期被发现，而不是执行的时候。通过&lt;数据类型&gt;接收一种引用数据类型，编译时会检查集合中存储的对象是否是该类型的，<br>如果不是，编译时不通过，从而把运行问题转移到编译时期，提高了程序安全性。使用泛型不需要强制类型转换。泛型擦除：泛型是在编译时期的，<br>所以在class字节码文件中不存在泛型。</p>
-</blockquote>
-<h1 id="在类上定义泛型"><a href="#在类上定义泛型" class="headerlink" title="在类上定义泛型"></a>在类上定义泛型</h1><h1 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符?"></a>泛型通配符?</h1><h1 id="泛型限定"><a href="#泛型限定" class="headerlink" title="泛型限定"></a>泛型限定</h1><p>？ extends E  可以接收E类型或E类型的子类型</p>
-<p>? super E  可以接收E类型或E类型的父类型</p>
-<h1 id="hashset排序"><a href="#HashSet排序" class="headerlink" title="HashSet排序"></a>HashSet排序</h1><blockquote>
-<p>String类默认排序方式是从小到大，现在我们要让String从短到长排序，实现Comparetor接口(自定义排序)。</p>
-</blockquote>
-
+          <p>java泛型<br>
+          <p>
+            <a href="/2017/05/03/Generics-base/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -455,129 +400,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th style="text-align:center">包装类</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>byte</td>
-<td style="text-align:center">Byte</td>
-</tr>
-<tr>
-<td>short</td>
-<td style="text-align:center">Short</td>
-</tr>
-<tr>
-<td>int</td>
-<td style="text-align:center">Integer</td>
-</tr>
-<tr>
-<td>long</td>
-<td style="text-align:center">Long</td>
-</tr>
-<tr>
-<td>boolean</td>
-<td style="text-align:center">Boolean</td>
-</tr>
-<tr>
-<td>char</td>
-<td style="text-align:center">Character</td>
-</tr>
-<tr>
-<td>float</td>
-<td style="text-align:center">Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td style="text-align:center">Double</td>
-</tr>
-</tbody>
-</table>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><ol>
-<li><p>实现基本类型和字符串类型的转换</p>
-</li>
-<li><p>字符串类型转基本类型</p>
-</li>
-</ol>
-<p>把十进制转成其它进制，得到的是其它进制形式的字符串</p>
-<p>Integer.toHexString() </p>
-<p>Integer.toOctalString()</p>
-<p>Integer.toBinaryString()</p>
-<p>其它进制转十进制</p>
-<p>Integer.parseInt(数据，进制)，返回值int类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Integer i = <span class="keyword">new</span> Integer(<span class="number">23</span>);<span class="comment">//jdk1.5之前</span></div><div class="line"><span class="keyword">int</span> num = i.intValue();</div><div class="line">System.out.println(num);</div><div class="line"><span class="comment">//jdk1.5开始</span></div><div class="line">Integer n = <span class="number">23</span>;<span class="comment">//自动装箱</span></div><div class="line">n = n + <span class="number">5</span>;<span class="comment">//自动拆箱，n = n.intValue() + 5 = 28,在自动装箱new Integer(28)</span></div><div class="line"></div><div class="line">Integer x = <span class="number">127</span>;</div><div class="line">Integer y = <span class="number">127</span>;</div><div class="line">System.out.println(x ==y);<span class="comment">//true</span></div><div class="line"></div><div class="line">Integer x1 = <span class="number">128</span>;</div><div class="line">Integer y1 = <span class="number">128</span>;</div><div class="line">System.out.println(x ==y);<span class="comment">//false</span></div><div class="line"></div></pre></td></tr></table></figure>
-<blockquote>
-<p>一个数如果在一个字节允许范围内，如果之前定义过，那么再定义时使用以前的。</p>
-</blockquote>
-<h1 id="打包导入"><a href="#打包导入" class="headerlink" title="打包导入"></a>打包导入</h1><blockquote>
-<p>解决class同名的问题，解决的入手点根据在同一个文件夹下，不能有同名的文件入手</p>
-</blockquote>
-<h2 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h2><p><code>javac -d . Person.java</code></p>
-<p>在当前路径编译打包Person类</p>
-<h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:center">private</th>
-<th style="text-align:center">默认</th>
-<th style="text-align:center">protected</th>
-<th style="text-align:center">public</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>同一个类中</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
-<td>同一个包中</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
-<td>不同的包中有继承关系</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">yes</td>
-<td style="text-align:center">yes</td>
-</tr>
-<tr>
-<td>不同的包没有继承关系</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">no</td>
-<td style="text-align:center">yes</td>
-</tr>
-</tbody>
-</table>
-<h1 id="日期类"><a href="#日期类" class="headerlink" title="日期类"></a>日期类</h1><p>java.lang包中的类是自动导入的，所以Object不需要导入包。<br>java.util.Date</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Date date = <span class="keyword">new</span> Date();</div><div class="line">        System.out.println(date);</div><div class="line"></div><div class="line">        <span class="comment">//long转换Date</span></div><div class="line">        <span class="keyword">long</span>  time = date.getTime();</div><div class="line">        System.out.println(time);</div><div class="line"></div><div class="line">        Date d = <span class="keyword">new</span> Date(System.currentTimeMillis());</div><div class="line">        System.out.println(d);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-<p>输出的结果：</p>
-<p>Sun Sep 18 18:27:19 CST 2016<br>1474194439026<br>Sun Sep 18 18:27:19 CST 2016</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="comment">//得到一个日期时间格式化对象</span></div><div class="line">        DateFormat df = DateFormat.getDateTimeInstance();</div><div class="line"></div><div class="line">        <span class="comment">//创建需要被格式化的日期对象</span></div><div class="line">        Date d = <span class="keyword">new</span> Date();</div><div class="line"></div><div class="line">        <span class="comment">// 使用DateFormat对象格式化日期时间</span></div><div class="line">        String time = df.format(d);</div><div class="line">        System.out.println(time);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>输出的结果：2016-9-18 18:34:18s</p>
-</blockquote>
-<p>通过给getDateTimeInstance()设置参数可以得到不同的日期字符串</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="comment">//得到一个日期时间格式化对象</span></div><div class="line">        DateFormat df = DateFormat.getDateTimeInstance(DateFormat.FULL,DateFormat.FULL);</div><div class="line"></div><div class="line">        <span class="comment">//创建需要被格式化的日期对象</span></div><div class="line">        Date d = <span class="keyword">new</span> Date();</div><div class="line"></div><div class="line">        <span class="comment">// 使用DateFormat对象格式化日期时间</span></div><div class="line">        String time = df.format(d);</div><div class="line">        System.out.println(time);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>2016年9月18日 星期日 下午06时43分04秒 CST,这是最全的时间日期格式的字符串，其它几个参数设置类似，参考API</p>
-</blockquote>
-<h3 id="按照自己想要的方式设置"><a href="#按照自己想要的方式设置" class="headerlink" title="按照自己想要的方式设置"></a>按照自己想要的方式设置</h3><p>SimpleDateFormat类，按照我们自己指定的来显示,构造方法有个带字符串的参数，用于指定格式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd E HH:mm:ss"</span>);</div><div class="line">Date dt = <span class="keyword">new</span> Date();</div><div class="line">String forStr = format.format(dt);</div><div class="line">System.out.println(forStr);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>结果：2016-09-18 星期日 18:51:22</p>
-</blockquote>
-
+          <p>java包装类<br>
+          <p>
+            <a href="/2017/05/03/wrap-class/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -622,9 +450,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>&amp;&amp; ||</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var a = 5,b = 6;</div><div class="line">	alert(a&lt;1 &amp;&amp; ++b&gt;5);//左边的为false,不再计算表达式右边</div><div class="line">	alert(b);//b=6,表达式没有计算</div><div class="line"></div><div class="line">	alert(a&gt;1 || ++b&gt;5);//表达式左边为true,右边的不再计算</div><div class="line">	alert(b);//b=6</div><div class="line"></div><div class="line">	//0相当鱼于false,非0是true</div><div class="line">	alert(0&amp;&amp;6);//false</div><div class="line">	alert(3&amp;&amp;6);//6</div><div class="line"></div><div class="line">	alert("" &amp;&amp; "hello");//"";</div><div class="line">	alert("hello" &amp;&amp; "world");//""相当于false,非空相当于true</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-
+          <p>js数学函数<br>
+          <p>
+            <a href="/2017/05/03/js-logic-math/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -669,29 +500,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p>解决接口和类不兼容问题</p>
-<blockquote>
-<p>适配器设计模式主要是为了解决类和接口一起工作不兼容的问题。拿生活中的例子来类比，<br>例如，我的笔记本的电源适配器，它的插头是三个脚的，而我目前身边只有一个两孔的插座，那么<br>我要想使用电源，就必须有一个东西能把3孔插头和2孔插座联系起来工作，这个把它们联系起来的<br>东西，就和我要说的适配器类似。</p>
-</blockquote>
-<p>1.组合方式实现插座适配器</p>
-<p>首先定义一个三相插座的接口，里面有个接口使用使用三相电流供电</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ThreePluginIf</span> </span>&#123;</div><div class="line">    <span class="comment">//使用三相电流供电</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">powerWithThree</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>不同国家电流分类不同，假设我有个国标二相电流类，它有个方法，如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GBTwoPlug</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">powerWithTwo</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"二相电流供电"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>笔记本类如下，笔记本能充电，有个charge方法。构造方法传入三相电接口，二相插座转三相需要一个中间类，<br>我叫它适配器(TwoPlugAdapter)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NoteBook</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> ThreePluginIf threePluginIf;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NoteBook</span><span class="params">(ThreePluginIf threePluginIf)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.threePluginIf = threePluginIf;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">charge</span><span class="params">()</span> </span>&#123;</div><div class="line">        threePluginIf.powerWithThree();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        GBTwoPlug two = <span class="keyword">new</span> GBTwoPlug();</div><div class="line">        ThreePluginIf threePlug = <span class="keyword">new</span> TwoPlugAdapter(two);</div><div class="line">        NoteBook noteBook = <span class="keyword">new</span> NoteBook(threePlug);</div><div class="line">        noteBook.charge();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>适配器类实现了三相的接口，使用组合的方法，其实用二相类实现实际的功能</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoPlugAdapter</span> <span class="keyword">implements</span> <span class="title">ThreePluginIf</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> GBTwoPlug two;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TwoPlugAdapter</span><span class="params">(GBTwoPlug two)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.two = two;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">powerWithThree</span><span class="params">()</span> </span>&#123;</div><div class="line">        two.powerWithTwo();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>2.继承方式实现插座适配器</p>
-<p>和组合的代码类似，继承方式实现插座适配器只需要增加一个适配器,<br>继承二相类并实现三相接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoPlugAdapterExtends</span> <span class="keyword">extends</span> <span class="title">GBTwoPlug</span> <span class="keyword">implements</span> <span class="title">ThreePluginIf</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">powerWithThree</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"借助继承实现"</span>);</div><div class="line">        <span class="keyword">this</span>.powerWithTwo();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>二种方法的区别</p>
-<p>组合方式:若所适配的类新添加子类，用一个适配器都能适配</p>
-<p>继承方式:新添加子类要额外新建适配器</p>
-<p>透明</p>
-<p>重用</p>
-<p>低耦合</p>
-
+          <p>设计模式—适配器模式<br>
+          <p>
+            <a href="/2017/05/03/adapter-pattern/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -736,32 +550,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="绑定服务"><a href="#绑定服务" class="headerlink" title="绑定服务"></a>绑定服务</h1><h2 id="绑定服务的步骤"><a href="#绑定服务的步骤" class="headerlink" title="绑定服务的步骤"></a>绑定服务的步骤</h2><p>1.客户端通过bindService()方法来绑定一个服务对象，如果绑定成功，会回调ServiceConnection接口的onServiceConnected()方法。  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 绑定服务</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> v</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bindService</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">    Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, MyService.class);</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Context.BIND_AUTO_CREATE 没有创建自动创建;有就绑定</div><div class="line">     * bindService()异步方法，执行完立即返回，什么时候成功回调connection</div><div class="line">     */</div><div class="line">    bindService(intent, connection, Context.BIND_AUTO_CREATE);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>绑定成功会调用下面接口的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> ServiceConnection connection = <span class="keyword">new</span> ServiceConnection() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onServiceConnected</span><span class="params">(ComponentName name, IBinder service)</span> </span>&#123;</div><div class="line">            <span class="comment">//绑定成功调用</span></div><div class="line">            cat = ICat.Stub.asInterface(service);</div><div class="line">            mBound = <span class="keyword">true</span>;</div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"绑定成功"</span>, Toast.LENGTH_SHORT)</div><div class="line">                    .show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onServiceDisconnected</span><span class="params">(ComponentName name)</span> </span>&#123;</div><div class="line">            <span class="comment">//绑定异常调用</span></div><div class="line">            mBound = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
-<p>2.通过Service组件来暴露业务接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * bindService</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyService</span><span class="params">()</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ICatImpl();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3.服务端通过创建*.aidl的文件来定义一个可以被客户端调用的业务接口</p>
-<pre><code>aidl文件：
-
-1. 不能有修饰符，类似接口
-2. 支持类型，8种基本数据类型，String,CharSquence,List&lt;String&gt;,Map,自定义类型
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.app.roman.basecomponent;</div><div class="line"></div><div class="line"><span class="comment">// Declare any non-default types here with import statements</span></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICat</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>;</div><div class="line">    <span class="function">String <span class="title">desc</span><span class="params">()</span></span>;</div><div class="line">    <span class="comment">/**</span></div><div class="line">    * android接口定义语言</div><div class="line">    * /</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    /**</div><div class="line">     * Demonstrates some basic types that you can use as parameters</div><div class="line">     * and return values in AIDL.</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">basicTypes</span><span class="params">(<span class="keyword">int</span> anInt, <span class="keyword">long</span> aLong, <span class="keyword">boolean</span> aBoolean, <span class="keyword">float</span> aFloat,</span></span></div><div class="line">            <span class="keyword">double</span> aDouble, String aString);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>定义2个业务接口setName()和desc()</p>
-</blockquote>
-<p>4.服务端提供一个业务接口的实现类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ICatImpl</span> <span class="keyword">extends</span> <span class="title">ICat</span>.<span class="title">Stub</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> <span class="keyword">throws</span> RemoteException </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">desc</span><span class="params">()</span> <span class="keyword">throws</span> RemoteException </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"i am a cat,my name is"</span> + name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">basicTypes</span><span class="params">(<span class="keyword">int</span> anInt, <span class="keyword">long</span> aLong, <span class="keyword">boolean</span> aBoolean, <span class="keyword">float</span> aFloat, <span class="keyword">double</span> aDouble, String aString)</span> <span class="keyword">throws</span> RemoteException </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>5.通过Service的onBind方法返回被绑定的对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ICatImpl();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>6.客户端如果绑定成功，就可以像调用自己的方法一样调用远程服务</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ICat cat;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> mBound = <span class="keyword">false</span>;<span class="comment">//是否绑定成功</span></div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> ServiceConnection connection = <span class="keyword">new</span> ServiceConnection() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onServiceConnected</span><span class="params">(ComponentName name, IBinder service)</span> </span>&#123;</div><div class="line">            <span class="comment">//绑定成功调用</span></div><div class="line">            cat = ICat.Stub.asInterface(service);</div><div class="line">            mBound = <span class="keyword">true</span>;</div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"绑定成功"</span>, Toast.LENGTH_SHORT)</div><div class="line">                    .show();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onServiceDisconnected</span><span class="params">(ComponentName name)</span> </span>&#123;</div><div class="line">            <span class="comment">//绑定异常调用</span></div><div class="line">            mBound = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 绑定服务</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> v</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bindService</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, MyService.class);</div><div class="line">        <span class="comment">/**</span></div><div class="line">         * Context.BIND_AUTO_CREATE 没有创建自动创建;有就绑定</div><div class="line">         * bindService()异步方法，执行完立即返回，什么时候成功回调connection</div><div class="line">         */</div><div class="line">        bindService(intent, connection, Context.BIND_AUTO_CREATE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 解绑服务</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> v</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unbindService</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mBound) &#123;</div><div class="line">            unbindService(connection);</div><div class="line">            Toast.makeText(<span class="keyword">this</span>, <span class="string">"解绑成功"</span>, Toast.LENGTH_SHORT).show();</div><div class="line">            mBound = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">callClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (cat == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            cat.setName(<span class="string">"喵喵"</span>);</div><div class="line"></div><div class="line">            Toast.makeText(<span class="keyword">this</span>, cat.desc(), Toast.LENGTH_SHORT).show();</div><div class="line">        &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>bindService(View v)方法执行绑定服务操作，服务绑定成功后点击按钮执行callClick(View v)方法，<br>然后执行接口业务逻辑，打印信息。</p>
-<p><strong>start启动的服务会长期存在，只要不停</strong></p>
-<p><strong>bind启动的服务在解绑的时候会销毁</strong></p>
-<p><strong>技巧：先start后bind</strong></p>
-
+          <p>Android service使用<br>
+          <p>
+            <a href="/2017/05/03/service/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -806,76 +600,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.man</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>&#125;</div><div class="line"><span class="selector-id">#main_id</span>&#123;<span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">300px</span>;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>&#125;</div></pre></td></tr></table></figure>
-<h1 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h1><p><strong>这是加粗的字体</strong></p>
-<h1 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h1><p><em>这是倾斜的字体</em></p>
-<h1 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h1><p><del>这是删除线</del></p>
-<h1 id="不会被编译"><a href="#不会被编译" class="headerlink" title="不会被编译"></a>不会被编译</h1><p><code>#@</code></p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
-<p>这是引用的一段话</p>
-</blockquote>
-<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><p><a href="http://www.google.com" target="_blank" rel="external">Google</a></p>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><table>
-<thead>
-<tr>
-<th style="text-align:left">姓名</th>
-<th style="text-align:left">班级</th>
-<th style="text-align:right">成绩</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">乔丹</td>
-<td style="text-align:left">96</td>
-<td style="text-align:right">100</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">left</th>
-<th style="text-align:center">center</th>
-<th style="text-align:right">right</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">aaaa</td>
-<td style="text-align:center">bbbbbb</td>
-<td style="text-align:right">ccccc</td>
-</tr>
-<tr>
-<td style="text-align:left">a</td>
-<td style="text-align:center">b</td>
-<td style="text-align:right">c</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>一个普通标题</th>
-<th>一个普通标题</th>
-<th>一个普通标题</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>短文本</td>
-<td>中等文本</td>
-<td>稍微长一点的文本</td>
-</tr>
-<tr>
-<td>稍微长一点的文本</td>
-<td>短文本</td>
-<td>中等文本</td>
-</tr>
-</tbody>
-</table>
-<h1 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h1><p>$$\int_a^b f(x) d(x)$$</p>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="!--￼1--&gt;/assets/img/lufei.jpg" alt="图片"></p>
-
+          <p>markdown语法<br>
+          <p>
+            <a href="/2017/05/03/markdown-syntax/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -920,50 +650,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="选择器种类"><a href="#选择器种类" class="headerlink" title="选择器种类"></a>选择器种类</h1><ul>
-<li>通配选择器  </li>
-<li>标签选择器</li>
-<li>类选择器</li>
-<li>ID选择器</li>
-<li>群组选择器<blockquote>
-<p>成群结对的出现  </p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">	p,table,#div,.main&#123;</div><div class="line">		background-color: #999;</div><div class="line">		margin: 0</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>后代选择器</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>如上图，table是父，tr和td都是它的后代，后代选择器代码如下</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">	table tr td&#123;&#125;</div><div class="line">	table td&#123;&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>子代选择器  </li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>tr是table的子，td是tr的子，但td不是table的子(是孙子),<strong>子代选择器不能跨两代，像这样是不对的table<code>&gt;</code>tr<code>&gt;</code>td</strong></p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">	tr&gt;td&#123;background: #999&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>属性选择器  </li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">class</span>=<span class="string">"contain"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">	[title]&#123;</div><div class="line">		background-color: #999;</div><div class="line">		margin: 0</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<h1 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>1,2是相邻兄弟，3,4是相邻兄弟，2个tr是相邻兄弟，1和3,4不是相邻兄弟，同理2和3,4也不是相邻兄弟。<br>如下选择器，把2,4变成浅灰色。网页从上往下加载，看到第一个td为1，它的兄弟为2，背景变成灰色，4同理。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">	td + td&#123;background: #999&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>伪类<blockquote>
-<p>应用为超链接点击前后的样式，<code>a:link</code>点击前样式，<code>a:visited</code>点击后样式，<code>a:hover</code>鼠标悬停样式，<code>a:active</code>点击时样式<br>顺序按照一次出现的顺序书写在css中，w3c规定，否则可能出问题。</p>
-</blockquote>
-</li>
-</ul>
-
+          <p>css选择器<br>
+          <p>
+            <a href="/2017/05/03/css-selector/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>

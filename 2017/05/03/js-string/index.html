@@ -12,17 +12,17 @@
   
 </title>
 
-<meta name="description" content="创建123456789&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	var s = &quot;abc&quot;;	var os = new String(&quot;abc&quot;);	alert(s.lenght);//基本类型使用引用类型的属性	alert(s == os);//true	alert(s === os);//false&amp;lt;/script&amp;gt; 基本类型和引用类型区别：引用类">
+<meta name="description" content="js字符串">
 <meta name="keywords" content="js-string">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js字符串">
 <meta property="og:url" content="http://yoursite.com/2017/05/03/js-string/index.html">
 <meta property="og:site_name" content="程序师的世界">
-<meta property="og:description" content="创建123456789&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	var s = &quot;abc&quot;;	var os = new String(&quot;abc&quot;);	alert(s.lenght);//基本类型使用引用类型的属性	alert(s == os);//true	alert(s === os);//false&amp;lt;/script&amp;gt; 基本类型和引用类型区别：引用类">
-<meta property="og:updated_time" content="2017-05-30T11:24:57.309Z">
+<meta property="og:description" content="js字符串">
+<meta property="og:updated_time" content="2017-06-03T07:51:54.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js字符串">
-<meta name="twitter:description" content="创建123456789&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	var s = &quot;abc&quot;;	var os = new String(&quot;abc&quot;);	alert(s.lenght);//基本类型使用引用类型的属性	alert(s == os);//true	alert(s === os);//false&amp;lt;/script&amp;gt; 基本类型和引用类型区别：引用类">
+<meta name="twitter:description" content="js字符串">
 
 
   <link rel="alternative" href="/atom.xml" title="程序师的世界" type="application/atom+xml">
@@ -188,7 +188,8 @@
   <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建"><span class="toc-text">创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a></li></ol>
 </div>
 
-    <h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var s = "abc";</div><div class="line">	var os = new String("abc");</div><div class="line"></div><div class="line">	alert(s.lenght);//基本类型使用引用类型的属性</div><div class="line">	alert(s == os);//true</div><div class="line">	alert(s === os);//false</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+    <p>js字符串<br><a id="more"></a></p>
+<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var s = "abc";</div><div class="line">	var os = new String("abc");</div><div class="line"></div><div class="line">	alert(s.lenght);//基本类型使用引用类型的属性</div><div class="line">	alert(s == os);//true</div><div class="line">	alert(s === os);//false</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>基本类型和引用类型区别：引用类型可以添加属性方法，基本类型不可以。基本类型可以使用引用类型的属性和方法。</p>
 <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var ss = "abc123def$#";</div><div class="line"></div><div class="line">	//根据索引得到字符串中的一个字符</div><div class="line">	alert(ss.charAt(0));//a</div><div class="line"></div><div class="line">	//得到字符对应的编码</div><div class="line">	alert(ss.charCodeAt(3));//</div><div class="line"></div><div class="line">	//根据编码生成字符</div><div class="line">	var str = String.fromCharCode(97,64);</div><div class="line">	alert(str);//a@</div><div class="line"></div><div class="line">	alert(ss.indexOf("c"));//字符在字符串第一次出现的位置</div><div class="line">	//lastIndexOf()字符最后一次出现的位置</div><div class="line">	//indexOf()</div><div class="line"></div><div class="line">	var email = "zhang.234@qq.com";</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <p>indexOf(“”,)</p>

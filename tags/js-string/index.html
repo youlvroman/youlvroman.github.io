@@ -193,18 +193,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var s = "abc";</div><div class="line">	var os = new String("abc");</div><div class="line"></div><div class="line">	alert(s.lenght);//基本类型使用引用类型的属性</div><div class="line">	alert(s == os);//true</div><div class="line">	alert(s === os);//false</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>基本类型和引用类型区别：引用类型可以添加属性方法，基本类型不可以。基本类型可以使用引用类型的属性和方法。</p>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var ss = "abc123def$#";</div><div class="line"></div><div class="line">	//根据索引得到字符串中的一个字符</div><div class="line">	alert(ss.charAt(0));//a</div><div class="line"></div><div class="line">	//得到字符对应的编码</div><div class="line">	alert(ss.charCodeAt(3));//</div><div class="line"></div><div class="line">	//根据编码生成字符</div><div class="line">	var str = String.fromCharCode(97,64);</div><div class="line">	alert(str);//a@</div><div class="line"></div><div class="line">	alert(ss.indexOf("c"));//字符在字符串第一次出现的位置</div><div class="line">	//lastIndexOf()字符最后一次出现的位置</div><div class="line">	//indexOf()</div><div class="line"></div><div class="line">	var email = "zhang.234@qq.com";</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>indexOf(“”,)</p>
-<p>substr()截取字符串,第一个参数是开始的索引，第二个参数是截取的个数</p>
-<p>substring()第一个参数是开始的索引，第二个参数是结束索引</p>
-<p>match()以数组形式返回，找不到匹配返回null</p>
-<p>search()返回第一次位置</p>
-<p>replace()替换，返回一个新的字符串，原有的字符串不变。</p>
-<p>split()切割字符串</p>
-<p>toUpperCase(),toLowerCase()大小写转换，原有字符串不变，返回新的字符串。</p>
-
+          <p>js字符串<br>
+          <p>
+            <a href="/2017/05/03/js-string/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>

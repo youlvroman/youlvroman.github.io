@@ -193,36 +193,12 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h1><h1 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h1><p>1.toString()</p>
-<p>2.join()</p>
-<p>指定toString()方法返回的字符创分隔符号</p>
-<p>3.push()</p>
-<p>向数组末尾添加数据，返回新数组的长度</p>
-<p>4.pop()</p>
-<p>从数组末尾删除数据，返回删除的数据</p>
-<p>5.unshift()</p>
-<p>向数组开头添加数据，返回新数组的长度</p>
-<p>6.shift()</p>
-<p>删除数组开头的数据，返回被删除的数据</p>
-<p>7.concat()</p>
-<p>基于当前数组创建新数组并返回改数组</p>
-<p>8.slice()</p>
-<p>截取制定区域数组返回一个新的数组</p>
-<p>9.splice()</p>
-<p>删除，插入，替换</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var arr = ["小新",19,"北京","学生"];</div><div class="line">	var arr2 = arr.splice(2,1);</div><div class="line">	alert(arr2);</div><div class="line">	alert(arr);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>上面的是删除操作，第一个参数2指定的是数组下标，第二个是删除的个数，把北京删除掉了，并返回北京，原来的数组数据改变，只有三个数据。</p>
-<h1 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h1><p>sort()返回排序好的数组(不生成新的数组)；没有参数默认按照ASCII字符升序排序</p>
-<blockquote>
-<p>ascii编码：任何的字符数字在计算机里都有对应的编码，例如，a-97,A-65,0-48。</p>
-</blockquote>
-<p>sort()默认排序的是ascii码，要想改变排序规则，sort()提供一个带参数方法，方法的参数是一个函数，该函数提供排序依据给sort()，sort()根据返回的结果进行排序，看代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">paixu</span><span class="params">(m,n)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (m &gt; n) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (m &lt; n) &#123;</div><div class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sor = [<span class="number">5</span>,<span class="number">43</span>,<span class="number">9</span>,<span class="number">18</span>];</div><div class="line">sor.sort(paixu);</div><div class="line">alert(sor);</div></pre></td></tr></table></figure>
-<p>或者这样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">paixu</span><span class="params">(m,n)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> m - m;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sor = [<span class="number">5</span>,<span class="number">43</span>,<span class="number">9</span>,<span class="number">18</span>];</div><div class="line">sor.sort(paixu);</div><div class="line">alert(sor);</div></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="../assets/paixu.png" alt=""></p>
-
+          <p>js数组介绍<br>
+          <p>
+            <a href="/2017/05/03/js-array/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
