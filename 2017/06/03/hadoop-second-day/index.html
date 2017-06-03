@@ -8,22 +8,22 @@
 
 <title>
   
-    hadoop-second-day
+    hadoop第二天
   
 </title>
 
-<meta name="description" content="Hadoop的dfs分布式文件系统的介绍">
-<meta name="keywords" content="吕游的博客,吕游,博客,blog,IT,技术">
+<meta name="description" content="HDFS的原理，HDFS的shell操作">
+<meta name="keywords" content="hadoop,HDFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hadoop-second-day">
+<meta property="og:title" content="hadoop第二天">
 <meta property="og:url" content="http://yoursite.com/2017/06/03/hadoop-second-day/index.html">
 <meta property="og:site_name" content="程序师的世界">
-<meta property="og:description" content="Hadoop的dfs分布式文件系统的介绍">
+<meta property="og:description" content="HDFS的原理，HDFS的shell操作">
 <meta property="og:image" content="http://yoursite.com/2017/06/03/hadoop-second-day/hdfs-principle.PNG">
-<meta property="og:updated_time" content="2017-06-03T06:24:43.997Z">
+<meta property="og:updated_time" content="2017-06-03T07:35:21.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hadoop-second-day">
-<meta name="twitter:description" content="Hadoop的dfs分布式文件系统的介绍">
+<meta name="twitter:title" content="hadoop第二天">
+<meta name="twitter:description" content="HDFS的原理，HDFS的shell操作">
 <meta name="twitter:image" content="http://yoursite.com/2017/06/03/hadoop-second-day/hdfs-principle.PNG">
 
 
@@ -158,7 +158,7 @@
           <article id="post-hadoop-second-day" class="article article-type-post">
   
     <h1 class="article-header">
-      hadoop-second-day
+      hadoop第二天
     </h1>
   
   
@@ -179,7 +179,7 @@
   <div class="article-entry">
     
 <div id="toc">
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的原理"><span class="toc-text">HDFS的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何设计分布式文件系统"><span class="toc-text">如何设计分布式文件系统？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的shell操作"><span class="toc-text">HDFS的shell操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的架构"><span class="toc-text">HDFS的架构</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的原理"><span class="toc-text">HDFS的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何设计分布式文件系统"><span class="toc-text">如何设计分布式文件系统？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何上传文件"><span class="toc-text">如何上传文件？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何保证数据安全"><span class="toc-text">如何保证数据安全？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#元数据的存贮位置"><span class="toc-text">元数据的存贮位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据的分块"><span class="toc-text">数据的分块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是分布式文件系统"><span class="toc-text">什么是分布式文件系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的shell操作"><span class="toc-text">HDFS的shell操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs的架构"><span class="toc-text">HDFS的架构</span></a></li></ol>
 </div>
 
     <p>Hadoop的dfs分布式文件系统的介绍<br><a id="more"></a></p>
@@ -188,14 +188,23 @@
 </blockquote>
 <h2 id="hdfs的原理"><a href="#HDFS的原理" class="headerlink" title="HDFS的原理"></a>HDFS的原理</h2><h3 id="如何设计分布式文件系统"><a href="#如何设计分布式文件系统？" class="headerlink" title="如何设计分布式文件系统？"></a>如何设计分布式文件系统？</h3><img src="/2017/06/03/hadoop-second-day/hdfs-principle.PNG" alt="HDFS原理图" title="HDFS原理图">
 <p><strong>图是别人的</strong></p>
-<blockquote>
-<p>如何上传a.log文件？</p>
-</blockquote>
-<p>过程：a.log(200M),client去请求NameNode，我要上传文件;NameNode维护着一些元数据(记录机器存贮容量等信息，账本)，NameNode计算第二个DataNode可以存贮a.log，于是NameNode把信息返给client，client将a.log写入第二个DataNode。</p>
-<blockquote>
-<p>如何保证数据安全？</p>
-</blockquote>
-<p>冗余存贮。DataNode与DataNode之间进行数据的复制，直到达到配制的副本数量。当写入dataNode的一个block完成，就会进行水平复制，复制完成还会反馈回去，NameNode进行记录。</p>
+<h4 id="如何上传文件"><a href="#如何上传文件？" class="headerlink" title="如何上传文件？"></a>如何上传文件？</h4><p>过程：a.log(200M),client去请求NameNode，我要上传文件;NameNode维护着一些元数据(记录机器存贮容量等信息，账本)，NameNode计算第二个DataNode可以存贮a.log，于是NameNode把信息返给client，client将a.log写入第二个DataNode。</p>
+<h4 id="如何保证数据安全"><a href="#如何保证数据安全？" class="headerlink" title="如何保证数据安全？"></a>如何保证数据安全？</h4><p>冗余存贮。DataNode与DataNode之间进行数据的复制，直到达到配制的副本数量。当写入dataNode的一个block完成，就会进行水平复制，复制完成还会反馈回去，NameNode进行记录。</p>
+<h4 id="元数据的存贮位置"><a href="#元数据的存贮位置" class="headerlink" title="元数据的存贮位置"></a>元数据的存贮位置</h4><p>选择存贮在NameNode节点而不是放在client端，client端会随时关闭，导致元数据丢失，找不到数据位置</p>
+<h4 id="数据的分块"><a href="#数据的分块" class="headerlink" title="数据的分块"></a>数据的分块</h4><p>hadoop1.x的数据块64M，2.x的是128M。上传是先分块，写完一块再分一块。比如上传1G的文件，分成8块，第一块写完，再写第二块，……不能8块同时写。好处是：我读写的时候，假如读到第八块失败，不用从头再读，只要读第八块就ok了。</p>
+<h3 id="什么是分布式文件系统"><a href="#什么是分布式文件系统" class="headerlink" title="什么是分布式文件系统"></a>什么是分布式文件系统</h3><ul>
+<li><p>文件数量越来越多，一台操作系统管辖不了，那就分配到更多的操作系统，但是不方便管理，迫切需要一种系统来管理多台机器上的文件</p>
+</li>
+<li><p>允许通过网络共享文件存贮空间</p>
+</li>
+<li>用户不用关心底层具体实现</li>
+<li>容错。即使某些节点脱机，整个系统仍然可以持续运行</li>
+<li>分布式文件系统有很多种，hdfs只是其中一种，智用于一次写入多次读取，不支持并发写入，小文件不适合。<ul>
+<li>并发写：数据块不能同时写的意思</li>
+<li>小文件：小文件也要占据一个元数据(内存中)，导致瓶颈</li>
+</ul>
+</li>
+</ul>
 <h2 id="hdfs的shell操作"><a href="#HDFS的shell操作" class="headerlink" title="HDFS的shell操作"></a>HDFS的shell操作</h2><ol>
 <li>查看帮助<pre><code>hadoop fs -help &lt;cmd&gt;
 </code></pre></li>
